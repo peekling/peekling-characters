@@ -128,3 +128,5 @@ This repository is the curated home for official Peekling packs, not a global co
 Repository tooling, tests, and documentation are licensed under [Apache-2.0](LICENSE). All 28 current official character packs also declare Apache-2.0 and carry their own `LICENSE` and `NOTICE` files.
 
 Redistribution must follow the applicable license and notice terms for each pack. The Peekling name, logo, official mascot, and other distinctive brand identity are not granted by the tooling license unless a specific asset license says otherwise. See [licensing and attribution](LICENSING.md), [NOTICE](NOTICE), and [AUTHORS](AUTHORS) for the complete records.
+
+![A shallow carpet of grass, small flowers, and leafy plants](./assets/peekling-greenery-footer-v1.png)
