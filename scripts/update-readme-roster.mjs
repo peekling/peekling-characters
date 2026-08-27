@@ -38,24 +38,27 @@ for (const directory of packageDirectories) {
   packages.push({ directory, packageManifest, title, description });
 }
 
-const publishedPackages = (
-  await Promise.all(
-    packages.map(async (entry) => {
-      const metadata = await publishedMetadata(entry.packageManifest.name);
-      return metadata ? { ...entry, metadata } : null;
-    }),
-  )
-).filter(Boolean);
-
-const rows = publishedPackages.map(
-  ({ directory, packageManifest, title, description, metadata }) =>
-    `| ![${title}](packages/${directory}/thumbnail.png) | [${title}](packages/${directory}) | ${description} | \`${metadata.version}\` | [\`${packageManifest.name}\`](https://www.npmjs.com/package/${packageManifest.name}/v/${metadata.version}) |`,
+const roster = await Promise.all(
+  packages.map(async (entry) => ({
+    ...entry,
+    metadata: await publishedMetadata(entry.packageManifest.name),
+  })),
+);
+const publishedCount = roster.filter((entry) => entry.metadata).length;
+const unreleasedCount = roster.length - publishedCount;
+const rows = roster.map(
+  ({ directory, packageManifest, title, description, metadata }) => {
+    const version = metadata
+      ? `\`${metadata.version}\``
+      : `\`${packageManifest.version}\` (unreleased)`;
+    const packageCell = metadata
+      ? `[\`${packageManifest.name}\`](https://www.npmjs.com/package/${packageManifest.name}/v/${metadata.version})`
+      : `\`${packageManifest.name}\` (unreleased)`;
+    return `| ![${title}](packages/${directory}/thumbnail.png) | [${title}](packages/${directory}) | ${description} | ${version} | ${packageCell} |`;
+  },
 );
 
-const publicationSummary =
-  rows.length === 0
-    ? "No character packs are published to npm yet. This table will fill as verified packages become available."
-    : `${rows.length} character ${rows.length === 1 ? "pack is" : "packs are"} currently published and installable from npm.`;
+const publicationSummary = `${publishedCount} character packs are published and installable from npm. ${unreleasedCount} ${unreleasedCount === 1 ? "pack is" : "packs are"} shown as unreleased for future follow-up.`;
 
 const table = [
   start,
@@ -77,12 +80,12 @@ if (check) {
   if (updated !== readme)
     throw new Error("README.md pack roster is stale; run npm run roster");
   console.log(
-    `README pack roster is current for ${rows.length} published packages (${packages.length} local packages checked).`,
+    `README pack roster is current for ${publishedCount} published and ${unreleasedCount} unreleased packages.`,
   );
 } else {
   await writeFile("README.md", updated);
   console.log(
-    `Updated README pack roster for ${rows.length} published packages (${packages.length} local packages checked).`,
+    `Updated README pack roster for ${publishedCount} published and ${unreleasedCount} unreleased packages.`,
   );
 }
 

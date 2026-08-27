@@ -23,10 +23,10 @@ The manifest records safe relative image paths and SHA-256 hashes for every atla
 
 ## Peekling characters
 
-This table is generated from the current package metadata and the live npm registry. It shows only package versions that are genuinely published and installable from npm. Unpublished work in this repository stays out of the public roster.
+This table is generated from the current package metadata and the live npm registry. Published rows link to their verified npm version. Packs that are still source-only stay visible with an explicit `(unreleased)` label and no npm link.
 
 <!-- PACK_ROSTER_START -->
-25 character packs are currently published and installable from npm.
+25 character packs are published and installable from npm. 3 packs are shown as unreleased for future follow-up.
 
 | Preview | Character | Description | Version | Package |
 | :---: | --- | --- | --- | --- |
@@ -55,15 +55,18 @@ This table is generated from the current package metadata and the live npm regis
 | ![Terra](packages/pack-terra/thumbnail.png) | [Terra](packages/pack-terra) | A pocket-sized Earth gliding with a calm, steady spin. | `0.1.0` | [`@peekling/pack-terra`](https://www.npmjs.com/package/@peekling/pack-terra/v/0.1.0) |
 | ![Tico](packages/pack-tico/thumbnail.png) | [Tico](packages/pack-tico) | A bright taco friend quick-stepping without spilling a thing. | `0.1.0` | [`@peekling/pack-tico`](https://www.npmjs.com/package/@peekling/pack-tico/v/0.1.0) |
 | ![Tumble](packages/pack-tumble/thumbnail.png) | [Tumble](packages/pack-tumble) | A cheerful cactus wanderer with a tiny western swagger. | `0.1.0` | [`@peekling/pack-tumble`](https://www.npmjs.com/package/@peekling/pack-tumble/v/0.1.0) |
+| ![Vali](packages/pack-vali/thumbnail.png) | [Vali](packages/pack-vali) | A brave little slime whose bouncy courage fills the room. | `0.1.0` (unreleased) | `@peekling/pack-vali` (unreleased) |
+| ![Waddle](packages/pack-waddle/thumbnail.png) | [Waddle](packages/pack-waddle) | A scarf-wrapped penguin with a gentle side-to-side waddle. | `0.1.0` (unreleased) | `@peekling/pack-waddle` (unreleased) |
+| ![Zesty](packages/pack-zesty/thumbnail.png) | [Zesty](packages/pack-zesty) | A lively pizza slice who scoots with a confident tilt. | `0.1.0` (unreleased) | `@peekling/pack-zesty` (unreleased) |
 <!-- PACK_ROSTER_END -->
 
-Run `npm run roster` after changing package metadata or after a release. `npm run roster:check` verifies local package metadata against npm and keeps unpublished versions out of the table.
+Run `npm run roster` after changing package metadata or after a release. `npm run roster:check` verifies npm publication state and keeps every unreleased package clearly labeled.
 
 ## Using a pack
 
 When a character appears in the table, follow its package link to npm for the verified installable version. Its source directory documents the validation command and license records, while `character.json` remains the source of truth for the character's states, movement, artwork, and capabilities.
 
-Only the versions in the table have been verified against npm. Source directories may contain newer work that is not published yet. The Peekling runtime is separate from these character packs and is responsible for loading the manifest and rendering its referenced atlas.
+Only rows with an npm link have been verified as installable. An `(unreleased)` row points to repository source for future follow-up and is not an availability claim. Source directories may also contain newer work than npm. The Peekling runtime is separate from these character packs and is responsible for loading the manifest and rendering its referenced atlas.
 
 The workspace at the repository root is private and cannot be published. Only the individual `packages/pack-*` workspaces are release boundaries.
 
