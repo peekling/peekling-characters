@@ -129,4 +129,8 @@ Repository tooling, tests, and documentation are licensed under [Apache-2.0](LIC
 
 Redistribution must follow the applicable license and notice terms for each pack. The Peekling name, logo, official mascot, and other distinctive brand identity are not granted by the tooling license unless a specific asset license says otherwise. See [licensing and attribution](LICENSING.md), [NOTICE](NOTICE), and [AUTHORS](AUTHORS) for the complete records.
 
+<p align="center">
+  <a href="README.md">🇺🇸</a> · <a href="translations/README.es.md">🇪🇸</a> · <a href="translations/README.zh-CN.md">🇨🇳</a> · <a href="translations/README.ko.md">🇰🇷</a> · <a href="translations/README.ja.md">🇯🇵</a> · <a href="translations/README.nl.md">🇳🇱</a> · <a href="translations/README.ar.md">🇸🇦</a> · <a href="translations/README.vi.md">🇻🇳</a> · <a href="translations/README.ru.md">🇷🇺</a> · <a href="translations/README.fr.md">🇫🇷</a> · <a href="translations/README.hi.md">🇮🇳</a> · <a href="translations/README.pt-BR.md">🇧🇷</a> · <a href="translations/README.de.md">🇩🇪</a> · <a href="translations/README.it.md">🇮🇹</a> · <a href="translations/README.id.md">🇮🇩</a> · <a href="translations/README.tr.md">🇹🇷</a> · <a href="translations/README.pl.md">🇵🇱</a> · <a href="translations/README.bn.md">🇧🇩</a>
+</p>
+
 ![A narrow strip of grass, wildflowers, foliage, and a winding path](./assets/peekling-ground-footer-v1.png)
