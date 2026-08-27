@@ -1,5 +1,6 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { format } from "prettier";
 
 const author = "Prajwal S. Venkateshmurthy";
 const authorUrl = "https://prajwal.me";
@@ -15,8 +16,12 @@ for (const directory of packageDirectories) {
   const title = id[0].toUpperCase() + id.slice(1);
   const packagePath = path.join(root, "package.json");
   const manifestPath = path.join(root, "character.json");
-  const packageManifest = JSON.parse(await readFile(packagePath, "utf8"));
-  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  const packageText = await readFile(packagePath, "utf8");
+  const manifestText = await readFile(manifestPath, "utf8");
+  const packageManifest = JSON.parse(packageText);
+  const manifest = JSON.parse(manifestText);
+  const originalPackageData = JSON.stringify(packageManifest);
+  const originalManifestData = JSON.stringify(manifest);
 
   delete packageManifest.private;
   packageManifest.license = "Apache-2.0";
@@ -43,8 +48,16 @@ for (const directory of packageDirectories) {
   manifest.license = "Apache-2.0";
   manifest.metadata.author = author;
 
-  await writeFile(packagePath, `${JSON.stringify(packageManifest, null, 2)}\n`);
-  await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+  if (JSON.stringify(packageManifest) !== originalPackageData)
+    await writeFile(
+      packagePath,
+      await format(JSON.stringify(packageManifest), { parser: "json" }),
+    );
+  if (JSON.stringify(manifest) !== originalManifestData)
+    await writeFile(
+      manifestPath,
+      await format(JSON.stringify(manifest), { parser: "json" }),
+    );
   await writeFile(path.join(root, "LICENSE"), apacheLicense);
   await writeFile(
     path.join(root, "NOTICE"),

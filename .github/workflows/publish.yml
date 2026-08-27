@@ -2,6 +2,15 @@ name: Publish character packs
 
 on:
   workflow_dispatch:
+    inputs:
+      release_set:
+        description: Exact comma-separated name@version set confirmed for publication
+        required: true
+        type: string
+  workflow_run:
+    workflows: [Character packs]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -11,20 +20,56 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  prepare:
+    if: >-
+      (github.event_name == 'workflow_dispatch' &&
+      github.ref == 'refs/heads/main') ||
+      (github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      vars.PEEKLING_AUTO_PUBLISH == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
+    outputs:
+      candidate_count: ${{ steps.candidates.outputs.count }}
+      release_set: ${{ steps.candidates.outputs.release_set }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Resolve unpublished package versions
+        id: candidates
+        run: npm run release:candidates -- --github-output
+      - name: Verify the manually confirmed release set
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          CONFIRMED_RELEASE_SET: ${{ inputs.release_set }}
+        run: npm run release:candidates -- --require "$CONFIRMED_RELEASE_SET"
+
+  publish:
+    needs: prepare
+    if: needs.prepare.outputs.candidate_count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
     environment: npm
     permissions:
       contents: read
       id-token: write
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: "24"
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
       - run: npm ci
-      - run: npm run check
       - run: npm run release

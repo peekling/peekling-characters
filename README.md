@@ -1,79 +1,102 @@
-# Peekling characters
+![Peekling characters gathered in a bright, welcoming landscape](./assets/peekling-community-banner.png)
 
-This public-intended Git monorepo owns the official data-only Peekling character packs and the tooling that builds, validates, and reviews them. Its npm workspace root is private and is never published. Each `packages/pack-*` workspace is an independently versioned public package.
+# Official Peekling character packs
 
-Peekling on GitHub: [organization](https://github.com/peekling) and [character repository](https://github.com/peekling/peekling-characters).
+Meet the little characters that give Peekling its personality.
 
-All 28 current official packs use Apache-2.0. The repository is not a global community catalog. Other creators can publish compatible packs from their own package or static-hosting boundaries.
+This is the official home for character packs made and maintained by the Peekling project. Each pack describes how one character looks, moves, reacts, and introduces itself to a compatible Peekling runtime. The packs are open source, data-only, and independently versioned.
 
-## Character packages
+Visit the [Peekling organization](https://github.com/peekling), or read the [pack authoring guide](PACK-AUTHORING.md) to see how a character is put together.
 
-This table is generated from each workspace's `package.json` and `character.json`. A package name in this table identifies its intended npm package. It does not claim that the version is already published.
+## What is a character pack?
+
+A character pack is a small bundle of data and images. It does not contain executable character behavior.
+
+Every official pack includes:
+
+- a `character.json` manifest with the character's identity, states, movement, version, and license
+- 1x, 2x, and 4x PNG atlases for different display densities
+- a `thumbnail.png` preview
+- its own `README.md`, `LICENSE`, and `NOTICE`
+
+The manifest records safe relative image paths and SHA-256 hashes for every atlas. Development scripts, tests, source art, and generated QA reports stay in this repository and outside the published package boundary.
+
+## Peekling characters
+
+This table is generated from the current package metadata and the live npm registry. It shows only package versions that are genuinely published and installable from npm. Unpublished work in this repository stays out of the public roster.
 
 <!-- PACK_ROSTER_START -->
-| Character | npm Package | Version | Description |
-| --- | --- | --- | --- |
-| [Bramble](packages/pack-bramble) | `@peekling/pack-bramble` | `0.1.0` | A warm forest bear with a slow, reassuring lumber. |
-| [Buns](packages/pack-buns) | `@peekling/pack-buns` | `0.1.0` | A round burger buddy who rolls forward and settles softly. |
-| [Byte](packages/pack-byte) | `@peekling/pack-byte` | `0.1.0` | A quick cyber cat with a bright visor and quiet paws. |
-| [Crumb](packages/pack-crumb) | `@peekling/pack-crumb` | `0.1.0` | A toast-sized friend who skips without dropping a crumb. |
-| [Ember](packages/pack-ember) | `@peekling/pack-ember` | `0.1.0` | A rust-red forest friend with a bright, adventurous streak. |
-| [Fable](packages/pack-fable) | `@peekling/pack-fable` | `0.1.0` | A clever terracotta fox always ready for the next trail. |
-| [Glint](packages/pack-glint) | `@peekling/pack-glint` | `0.1.0` | A glowing elemental wisp drifting wherever wonder leads. |
-| [Halo](packages/pack-halo) | `@peekling/pack-halo` | `0.1.0` | A tiny ringed planet rolling through its own bright orbit. |
-| [Luna](packages/pack-luna) | `@peekling/pack-luna` | `0.1.0` | A dreamy moon friend tracing a quiet little orbit. |
-| [Mochi](packages/pack-mochi) | `@peekling/pack-mochi` | `0.1.0` | A lavender-eared bunny with soft, springy steps. |
-| [Moss](packages/pack-moss) | `@peekling/pack-moss` | `0.1.0` | A mint-green frog who crosses the page in cheerful hops. |
-| [Nib](packages/pack-nib) | `@peekling/pack-nib` | `0.1.0` | A curious mole who burrows, scoots, and pops up smiling. |
-| [Nori](packages/pack-nori) | `@peekling/pack-nori` | `0.1.0` | A cozy sushi friend with a gentle rice-body shuffle. |
-| [Nova](packages/pack-nova) | `@peekling/pack-nova` | `0.1.0` | A cosmic creature who phases gently between little worlds. |
-| [Orbit](packages/pack-orbit) | `@peekling/pack-orbit` | `0.1.0` | A round little robot with a cool display and precise tiny steps. |
-| [Peek](packages/pack-peek) | `@peekling/pack-peek` | `0.1.0` | A curious kitten-fox who follows pointers and celebrates small wins. |
-| [Pip](packages/pack-pip) | `@peekling/pack-pip` | `0.1.0` | A warm-gold corgi who trots into every little celebration. |
-| [Purl](packages/pack-purl) | `@peekling/pack-purl` | `0.1.0` | A woolly lamb who bounds forward on cloud-soft feet. |
-| [Quill](packages/pack-quill) | `@peekling/pack-quill` | `0.1.0` | A thoughtful scholar owl who flutters between bright ideas. |
-| [Rivet](packages/pack-rivet) | `@peekling/pack-rivet` | `0.1.0` | A clockwork beetle who trundles along with careful purpose. |
-| [Rook](packages/pack-rook) | `@peekling/pack-rook` | `0.1.0` | A curious raccoon who tiptoes toward every shiny surprise. |
-| [Sol](packages/pack-sol) | `@peekling/pack-sol` | `0.1.0` | A sunny companion who floats with a warm, radiant pulse. |
-| [Terra](packages/pack-terra) | `@peekling/pack-terra` | `0.1.0` | A pocket-sized Earth gliding with a calm, steady spin. |
-| [Tico](packages/pack-tico) | `@peekling/pack-tico` | `0.1.0` | A bright taco friend quick-stepping without spilling a thing. |
-| [Tumble](packages/pack-tumble) | `@peekling/pack-tumble` | `0.1.0` | A cheerful cactus wanderer with a tiny western swagger. |
-| [Vali](packages/pack-vali) | `@peekling/pack-vali` | `0.1.0` | A brave little slime whose bouncy courage fills the room. |
-| [Waddle](packages/pack-waddle) | `@peekling/pack-waddle` | `0.1.0` | A scarf-wrapped penguin with a gentle side-to-side waddle. |
-| [Zesty](packages/pack-zesty) | `@peekling/pack-zesty` | `0.1.0` | A lively pizza slice who scoots with a confident tilt. |
+No character packs are published to npm yet. This table will fill as verified packages become available.
+
+| Preview | Character | Description | Version | Package |
+| :---: | --- | --- | --- | --- |
 <!-- PACK_ROSTER_END -->
 
-Run `npm run roster` after changing a package name, version, title, or description. `npm run roster:check` fails when a row is missing, duplicated, stale, or extra.
+Run `npm run roster` after changing package metadata or after a release. `npm run roster:check` verifies local package metadata against npm and keeps unpublished versions out of the table.
 
-## Development
+## Using a pack
 
-```sh
-npm install
-npm run check
-```
+When a character appears in the table, follow its package link to npm for the verified installable version. Its source directory documents the validation command and license records, while `character.json` remains the source of truth for the character's states, movement, artwork, and capabilities.
 
-The simplified published-pack boundary contains:
+Only the versions in the table have been verified against npm. Source directories may contain newer work that is not published yet. The Peekling runtime is separate from these character packs and is responsible for loading the manifest and rendering its referenced atlas.
 
-- `package.json`
-- `character.json`
-- every atlas referenced by `character.json`
-- `thumbnail.png`
-- `LICENSE`
-- `NOTICE` when applicable
-- `README.md`
+The workspace at the repository root is private and cannot be published. Only the individual `packages/pack-*` workspaces are release boundaries.
 
-Source material, development scripts, tests, and generated QA reports remain repository-only. See [pack authoring](PACK-AUTHORING.md) for the pack contract.
+## Make a character
 
-## Release preparation
+Have an idea for a new little friend? The creative core of a pack has three parts:
 
-Every user-facing package change needs a Changeset that names only the affected `@peekling/pack-*` packages. Changesets creates a release pull request with the version and changelog updates. Publication is a separate protected workflow and publishes only package versions that are not already present in npm.
+- `character.json` describes the character, its animation states, movement, version, license, and atlas files.
+- `atlas-1x.png` is the minimum artwork atlas in the general pack contract. An official pack must also include matching `atlas-2x.png` and `atlas-4x.png` variants.
+- `thumbnail.png` is the small preview shown in galleries and package listings.
 
-The future npm trusted publisher must be configured for the exact public GitHub repository and `publish.yml` workflow after the repository and packages exist. The workflow uses OIDC and does not accept a long-lived npm publishing token. See [release preparation](RELEASING.md).
+An official publishable pack also needs `package.json`, `README.md`, `LICENSE`, `NOTICE`, and every atlas named by its manifest. Start with the [pack authoring guide](PACK-AUTHORING.md) and use [Peek's package](packages/pack-peek) as a complete source example.
 
-No package or repository is published by the local preparation commands.
+Enhanced creation tools will be linked here when they are released. Until then, the authoring guide, package manifests, and current official packs are the source of truth.
+
+## Contributing
+
+Thoughtful fixes and focused improvements are welcome. If you want to propose a new official character or a larger change, please [open an issue](https://github.com/peekling/peekling-characters/issues) first so we can agree on scope, artwork provenance, and licensing.
+
+You will need Node.js 22 or later. The workspace records npm 11.19.0 as its package manager.
+
+1. Open an issue for a new character so its name, place in the official collection, artwork ownership, and license can be discussed before you do a lot of work. Changes to an existing pack are accepted only after its code owner or designated reviewer approves them.
+2. Fork and clone the repository, then install the workspace dependencies with `npm install`.
+3. Choose a new lowercase identifier such as `my-friend`. It must not duplicate a character directory, manifest name, or npm package. Use [Peek's complete source package](packages/pack-peek) as a structural example and create `packages/pack-my-friend`.
+4. Build the publishable boundary:
+
+   - `package.json` names `@peekling/pack-my-friend`, declares a semantic version, public access, license, repository directory, build and test scripts, and the exact public files.
+   - `character.json` uses format 1 and the same name, version, and license. Give it a title, author, description, 1x/2x/4x atlas records, animation states with valid frames and timings, all eight movement directions, and a positive default scale.
+   - `thumbnail.png` is a valid 64x64 PNG. The current official grid uses 64-pixel logical cells, 16 columns, and 3 rows, so the three atlases are 1024x192, 2048x384, and 4096x768. Their declared density, cell size, dimensions, and SHA-256 hashes must agree.
+   - Add `README.md`, `LICENSE`, `NOTICE`, a focused test, and every atlas referenced by the manifest. Keep source art and development helpers outside the `files` list.
+   - For the current manual art pipeline, add the character to `scripts/build-character-roster.mjs` with its required metadata and movement records. Supply the same repository-only source inputs used by the existing packs so `npm run build` can reproduce the atlases rather than accepting hand-edited output.
+
+5. Run the focused package test and build. For Peek, the equivalent commands are:
+
+   ```sh
+   npm test -w @peekling/pack-peek
+   npm run build -w @peekling/pack-peek
+   ```
+
+6. If package metadata changed, regenerate this table with `npm run roster`, then run the full repository gate with `npm run check`.
+7. Run `npm run changeset` and include every affected pack. Every file change under a pack directory needs a version decision, including art, JSON, metadata, docs, tests, and source files. Choose the level yourself:
+
+   - `patch` for compatible fixes, corrections, or tuning
+   - `minor` for meaningful backwards-compatible additions or substantial creative updates
+   - `major` for a breaking change, replacement, or removal
+
+   Automation never guesses the level from the size or kind of your change.
+
+8. Open a pull request that explains the character, provenance and license of its art, what changed, and why the chosen version level is appropriate.
+
+Before review, pull-request CI requires a release plan for every changed pack. It then checks the manifest contract and state definitions, identifier uniqueness, unused npm names for new packs, safe image paths and hashes, PNG integrity, thumbnail size, 1x/2x/4x atlas existence and scale geometry, tests, reproducible builds, size limits, licensing, and the exact files in each npm package dry-run. These checks prevent accidental conflicts and packaging mistakes; human reviewers still decide whether a character or change belongs in the official collection.
+
+After a validated change reaches `main`, Changesets prepares a separate version pull request for review. The first npm publication remains a deliberate maintainer action. Automatic OIDC publication can be enabled only after the initial packages exist and each package trusts this repository's publish workflow. Until that bootstrap is complete, repository source is not a promise that a package is available from npm. See [release preparation](RELEASING.md) for the complete maintainer flow.
+
+This repository is the curated home for official Peekling packs, not a global community catalog. Creators can publish compatible third-party packs from their own package or static-hosting boundaries with a valid public license.
 
 ## Licensing and attribution
 
-Original repository tooling, tests, and documentation are Apache-2.0. Each current official pack also has its own Apache-2.0 `LICENSE` and `NOTICE`. Atlas hashes and author and license metadata are validated against the package manifest without requiring additional policy files. See [licensing and attribution](LICENSING.md).
+Repository tooling, tests, and documentation are licensed under [Apache-2.0](LICENSE). All 28 current official character packs also declare Apache-2.0 and carry their own `LICENSE` and `NOTICE` files.
 
-Generated QA output belongs in `artifacts/` and is not package content.
+Redistribution must follow the applicable license and notice terms for each pack. The Peekling name, logo, official mascot, and other distinctive brand identity are not granted by the tooling license unless a specific asset license says otherwise. See [licensing and attribution](LICENSING.md), [NOTICE](NOTICE), and [AUTHORS](AUTHORS) for the complete records.

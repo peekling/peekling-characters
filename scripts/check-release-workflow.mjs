@@ -17,6 +17,11 @@ if (workspace.bugs?.url !== issuesUrl)
   failures.push("workspace issues URL is inconsistent");
 if (workspace.scripts?.release !== "changeset publish")
   failures.push("release must use Changesets publication");
+if (
+  workspace.scripts?.["generated:check"] !==
+  "node scripts/check-generated-drift.mjs"
+)
+  failures.push("generated pack output must be checked for committed drift");
 if (changesets.access !== "public" || changesets.baseBranch !== "main")
   failures.push("Changesets must target public packages from main");
 if (
@@ -67,6 +72,12 @@ if (/id-token:\s*write/.test(releasePr))
 
 for (const expected of [
   "workflow_dispatch:",
+  "workflow_run:",
+  "workflows: [Character packs]",
+  "github.ref == 'refs/heads/main'",
+  "vars.PEEKLING_AUTO_PUBLISH == 'true'",
+  "npm run release:candidates -- --github-output",
+  'npm run release:candidates -- --require "$CONFIRMED_RELEASE_SET"',
   "environment: npm",
   "id-token: write",
   'node-version: "24"',

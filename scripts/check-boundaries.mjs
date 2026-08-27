@@ -1,11 +1,14 @@
 import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { validatePublishablePack } from "./license-policy.mjs";
+import { validateCharacterPackFiles } from "./validate-character-pack-files.mjs";
 
 const failures = [];
 const packages = await readdir("packages", { withFileTypes: true });
 const workspace = JSON.parse(await readFile("package.json", "utf8"));
 const gitignore = await readFile(".gitignore", "utf8");
+const packageNames = new Set();
+const characterNames = new Set();
 
 if (workspace.private !== true)
   failures.push("the characters monorepo root must remain private");
@@ -33,6 +36,9 @@ for (const entry of packages) {
   const metadata = JSON.parse(
     await readFile(path.join(root, "package.json"), "utf8"),
   );
+  const character = JSON.parse(
+    await readFile(path.join(root, "character.json"), "utf8"),
+  );
   for (const required of [
     "README.md",
     "LICENSE",
@@ -46,6 +52,14 @@ for (const entry of packages) {
     );
   if (!metadata.name?.startsWith("@peekling/"))
     failures.push(`${entry.name} lacks a Peekling package identity`);
+  if (packageNames.has(metadata.name))
+    failures.push(`${entry.name} repeats package name ${metadata.name}`);
+  packageNames.add(metadata.name);
+  if (characterNames.has(character.name))
+    failures.push(
+      `${entry.name} repeats character identifier ${character.name}`,
+    );
+  characterNames.add(character.name);
   const publishablePack =
     entry.name.startsWith("pack-") && metadata.private !== true;
   if (!publishablePack)
@@ -60,16 +74,21 @@ for (const entry of packages) {
         (file) => typeof file === "string" && !file.includes("*"),
       ),
     ];
-    const readJson = async (file) =>
-      JSON.parse(await readFile(path.join(root, file), "utf8"));
     const packIssues = validatePublishablePack({
-      manifest: await readJson("character.json"),
+      manifest: character,
       packageManifest: metadata,
       licenseText: await readFile(path.join(root, "LICENSE"), "utf8"),
       noticeText: await readFile(path.join(root, "NOTICE"), "utf8"),
       files,
     });
     failures.push(...packIssues.map((issue) => `${entry.name}: ${issue}`));
+    const characterIssues = await validateCharacterPackFiles({
+      root,
+      directory: entry.name,
+      manifest: character,
+      packageManifest: metadata,
+    });
+    failures.push(...characterIssues.map((issue) => `${entry.name}: ${issue}`));
   }
 }
 

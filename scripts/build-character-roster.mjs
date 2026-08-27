@@ -401,10 +401,13 @@ async function build(name) {
     },
     defaults: { scale: 1 },
   };
-  await writeFile(
-    path.join(root, "character.json"),
-    await format(JSON.stringify(manifest), { parser: "json" }),
-  );
+  const manifestPath = path.join(root, "character.json");
+  const existingManifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  if (JSON.stringify(existingManifest) !== JSON.stringify(manifest))
+    await writeFile(
+      manifestPath,
+      await format(JSON.stringify(manifest), { parser: "json" }),
+    );
   const oneX = PNG.sync.read(await readFile(path.join(root, "atlas-1x.png")));
   report.frames = packed.map((_, index) =>
     metricsFrame(

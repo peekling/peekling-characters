@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { access, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const start = "<!-- PACK_ROSTER_START -->";
@@ -9,7 +9,7 @@ const packageDirectories = (await readdir("packages", { withFileTypes: true }))
   .map((entry) => entry.name)
   .sort();
 const seenPackages = new Set();
-const rows = [];
+const packages = [];
 
 for (const directory of packageDirectories) {
   const packageManifest = JSON.parse(
@@ -30,19 +30,39 @@ for (const directory of packageDirectories) {
     throw new Error(
       `${directory} has mismatched package and character versions`,
     );
+  await access(path.join("packages", directory, "thumbnail.png"));
   const title = tableCell(character.metadata?.title);
   const description = tableCell(character.metadata?.description);
   if (!title || !description)
     throw new Error(`${directory} lacks a title or description`);
-  rows.push(
-    `| [${title}](packages/${directory}) | \`${packageManifest.name}\` | \`${packageManifest.version}\` | ${description} |`,
-  );
+  packages.push({ directory, packageManifest, title, description });
 }
+
+const publishedPackages = (
+  await Promise.all(
+    packages.map(async (entry) => {
+      const metadata = await publishedMetadata(entry.packageManifest.name);
+      return metadata ? { ...entry, metadata } : null;
+    }),
+  )
+).filter(Boolean);
+
+const rows = publishedPackages.map(
+  ({ directory, packageManifest, title, description, metadata }) =>
+    `| ![${title}](packages/${directory}/thumbnail.png) | [${title}](packages/${directory}) | ${description} | \`${metadata.version}\` | [\`${packageManifest.name}\`](https://www.npmjs.com/package/${packageManifest.name}/v/${metadata.version}) |`,
+);
+
+const publicationSummary =
+  rows.length === 0
+    ? "No character packs are published to npm yet. This table will fill as verified packages become available."
+    : `${rows.length} character ${rows.length === 1 ? "pack is" : "packs are"} currently published and installable from npm.`;
 
 const table = [
   start,
-  "| Character | npm Package | Version | Description |",
-  "| --- | --- | --- | --- |",
+  publicationSummary,
+  "",
+  "| Preview | Character | Description | Version | Package |",
+  "| :---: | --- | --- | --- | --- |",
   ...rows,
   end,
 ].join("\n");
@@ -56,10 +76,36 @@ const updated = `${readme.slice(0, startIndex)}${table}${readme.slice(endIndex +
 if (check) {
   if (updated !== readme)
     throw new Error("README.md pack roster is stale; run npm run roster");
-  console.log(`README pack roster is current for ${rows.length} packages.`);
+  console.log(
+    `README pack roster is current for ${rows.length} published packages (${packages.length} local packages checked).`,
+  );
 } else {
   await writeFile("README.md", updated);
-  console.log(`Updated README pack roster for ${rows.length} packages.`);
+  console.log(
+    `Updated README pack roster for ${rows.length} published packages (${packages.length} local packages checked).`,
+  );
+}
+
+async function publishedMetadata(name) {
+  const url = `https://registry.npmjs.org/${encodeURIComponent(name)}`;
+  const response = await fetch(url, {
+    headers: { accept: "application/vnd.npm.install-v1+json" },
+  });
+  if (response.status === 404) return null;
+  if (!response.ok)
+    throw new Error(
+      `npm registry check failed for ${name}: ${response.status} ${response.statusText}`,
+    );
+  const packageMetadata = await response.json();
+  const latestVersion = packageMetadata["dist-tags"]?.latest;
+  const metadata = packageMetadata.versions?.[latestVersion];
+  if (
+    metadata?.name !== name ||
+    metadata?.version !== latestVersion ||
+    typeof metadata.dist?.tarball !== "string"
+  )
+    throw new Error(`${name} has incomplete npm registry metadata`);
+  return metadata;
 }
 
 function tableCell(value) {
