@@ -1,0 +1,35 @@
+{
+  "name": "@peekling/pack-nova",
+  "version": "0.1.0",
+  "description": "Nova HD character pack for Peekling",
+  "license": "Apache-2.0",
+  "files": [
+    "character.json",
+    "atlas-1x.png",
+    "atlas-2x.png",
+    "atlas-4x.png",
+    "thumbnail.png",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build-character-roster.mjs && node ../../scripts/qa-character-pack.mjs nova",
+    "test": "node --test test/*.test.mjs"
+  },
+  "author": {
+    "name": "Prajwal S. Venkateshmurthy",
+    "url": "https://prajwal.me"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peekling/peekling-characters.git",
+    "directory": "packages/pack-nova"
+  },
+  "bugs": {
+    "url": "https://github.com/peekling/peekling-characters/issues"
+  }
+}

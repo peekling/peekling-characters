@@ -1,0 +1,144 @@
+{
+  "format": 1,
+  "name": "peek",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "Peek",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A curious kitten-fox who follows pointers and celebrates small wins.",
+    "tags": ["peek", "native-v0.1", "hd-adaptive"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 3,
+      "logicalCellSize": 64,
+      "lineage": "peek-generated-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 64,
+          "sha256": "c6bee964a9424d1051ff92481f815cef2f5cf19aab786189ba8f30240a3cb8cc"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 128,
+          "sha256": "5af890163dbb13d00feacb6135758e3f608a19b7b68675539cb3c6f156e348dc"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 256,
+          "sha256": "10563ca4268253b16eb76300a5141485aec92e34a21172a8eec36fe653a3b528"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1],
+      "durations": [900, 180],
+      "loop": true
+    },
+    "move:N": {
+      "frames": [2, 3],
+      "fps": 6,
+      "loop": true
+    },
+    "move:NE": {
+      "frames": [4, 5],
+      "fps": 6,
+      "loop": true
+    },
+    "move:E": {
+      "frames": [6, 7],
+      "fps": 6,
+      "loop": true
+    },
+    "move:SE": {
+      "frames": [8, 9],
+      "fps": 6,
+      "loop": true
+    },
+    "move:W": {
+      "frames": [10, 11],
+      "fps": 6,
+      "loop": true
+    },
+    "move:SW": {
+      "frames": [12, 13],
+      "fps": 6,
+      "loop": true
+    },
+    "move:NW": {
+      "frames": [14, 15],
+      "fps": 6,
+      "loop": true
+    },
+    "move:S": {
+      "frames": [16, 17],
+      "fps": 6,
+      "loop": true
+    },
+    "click": {
+      "frames": [18, 19],
+      "durations": [260, 160],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [20, 21],
+      "durations": [320, 160],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [22, 23],
+      "durations": [300, 180],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [24, 25],
+      "durations": [280, 160],
+      "loop": false
+    },
+    "happy": {
+      "frames": [26, 27],
+      "durations": [360, 180],
+      "loop": false
+    },
+    "success": {
+      "frames": [28, 29],
+      "durations": [420, 180],
+      "loop": false
+    },
+    "error": {
+      "frames": [30, 31],
+      "durations": [520, 220],
+      "loop": false
+    },
+    "sleep": {
+      "frames": [32, 33],
+      "durations": [900, 1500],
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "move:N",
+        "NE": "move:NE",
+        "E": "move:E",
+        "SE": "move:SE",
+        "S": "move:S",
+        "SW": "move:SW",
+        "W": "move:W",
+        "NW": "move:NW"
+      }
+    }
+  },
+  "defaults": {
+    "scale": 1
+  }
+}

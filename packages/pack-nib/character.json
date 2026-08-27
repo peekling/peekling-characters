@@ -1,0 +1,173 @@
+{
+  "format": 1,
+  "name": "nib",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "Nib",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A curious mole who burrows, scoots, and pops up smiling.",
+    "tags": ["nib", "native-v0.1", "hd-adaptive"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 3,
+      "logicalCellSize": 64,
+      "lineage": "nib-generated-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 64,
+          "sha256": "92daa4446deb72e918deb9b9233302b2c7df6798e368f3dc57d2a09e6c7e6db9"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 128,
+          "sha256": "e92d37457b077e9cad925f931f85ad85ab0129c93862d8e96b02c8539e0f68be"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 256,
+          "sha256": "c1cb53eb234205817050bcb539975963b3eeae812f80f20d6d7b4f75ae0c6033"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1],
+      "durations": [900, 180],
+      "loop": true
+    },
+    "burrow-scoot:N": {
+      "frames": [2, 3],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:NE": {
+      "frames": [4, 5],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:E": {
+      "frames": [6, 7],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:SE": {
+      "frames": [8, 9],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:W": {
+      "frames": [10, 11],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:SW": {
+      "frames": [12, 13],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:NW": {
+      "frames": [14, 15],
+      "fps": 6,
+      "loop": true
+    },
+    "burrow-scoot:S": {
+      "frames": [16, 17],
+      "fps": 6,
+      "loop": true
+    },
+    "click": {
+      "frames": [18, 19],
+      "durations": [260, 160],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [20, 21],
+      "durations": [320, 160],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [22, 23],
+      "durations": [300, 180],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [24, 25],
+      "durations": [280, 160],
+      "loop": false
+    },
+    "happy": {
+      "frames": [26, 27],
+      "durations": [360, 180],
+      "loop": false
+    },
+    "success": {
+      "frames": [28, 29],
+      "durations": [420, 180],
+      "loop": false
+    },
+    "error": {
+      "frames": [30, 31],
+      "durations": [520, 220],
+      "loop": false
+    },
+    "sleep": {
+      "frames": [32, 33],
+      "durations": [900, 1500],
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "burrow-scoot:N",
+        "NE": "burrow-scoot:NE",
+        "E": "burrow-scoot:E",
+        "SE": "burrow-scoot:SE",
+        "S": "burrow-scoot:S",
+        "SW": "burrow-scoot:SW",
+        "W": "burrow-scoot:W",
+        "NW": "burrow-scoot:NW"
+      },
+      "motion": {
+        "keyframes": [
+          {
+            "at": 0,
+            "advance": 0,
+            "lift": 0
+          },
+          {
+            "at": 0.28,
+            "advance": 0.1,
+            "lift": 0.03
+          },
+          {
+            "at": 0.58,
+            "advance": 0.76,
+            "lift": 0.08
+          },
+          {
+            "at": 0.82,
+            "advance": 1,
+            "lift": 0
+          },
+          {
+            "at": 1,
+            "advance": 1,
+            "lift": 0
+          }
+        ]
+      }
+    }
+  },
+  "defaults": {
+    "scale": 1
+  }
+}

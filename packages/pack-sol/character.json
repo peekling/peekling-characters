@@ -1,0 +1,173 @@
+{
+  "format": 1,
+  "name": "sol",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "Sol",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A sunny companion who floats with a warm, radiant pulse.",
+    "tags": ["sol", "native-v0.1", "hd-adaptive"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 3,
+      "logicalCellSize": 64,
+      "lineage": "sol-generated-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 64,
+          "sha256": "2e53823f83d0622eac29adde2b7852500ea1a3c468868d0c0243c4cefb191471"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 128,
+          "sha256": "dae7df79f724584029978faaa7a7c3b482eb924c6e5795462625d432b711bc70"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 256,
+          "sha256": "413110c51ecacc7c2470afd962dddea5e87c640c30841d854ec30f2b58f336d7"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1],
+      "durations": [900, 180],
+      "loop": true
+    },
+    "radiant-float:N": {
+      "frames": [2, 3],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:NE": {
+      "frames": [4, 5],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:E": {
+      "frames": [6, 7],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:SE": {
+      "frames": [8, 9],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:W": {
+      "frames": [10, 11],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:SW": {
+      "frames": [12, 13],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:NW": {
+      "frames": [14, 15],
+      "fps": 6,
+      "loop": true
+    },
+    "radiant-float:S": {
+      "frames": [16, 17],
+      "fps": 6,
+      "loop": true
+    },
+    "click": {
+      "frames": [18, 19],
+      "durations": [260, 160],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [20, 21],
+      "durations": [320, 160],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [22, 23],
+      "durations": [300, 180],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [24, 25],
+      "durations": [280, 160],
+      "loop": false
+    },
+    "happy": {
+      "frames": [26, 27],
+      "durations": [360, 180],
+      "loop": false
+    },
+    "success": {
+      "frames": [28, 29],
+      "durations": [420, 180],
+      "loop": false
+    },
+    "error": {
+      "frames": [30, 31],
+      "durations": [520, 220],
+      "loop": false
+    },
+    "sleep": {
+      "frames": [32, 33],
+      "durations": [900, 1500],
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "radiant-float:N",
+        "NE": "radiant-float:NE",
+        "E": "radiant-float:E",
+        "SE": "radiant-float:SE",
+        "S": "radiant-float:S",
+        "SW": "radiant-float:SW",
+        "W": "radiant-float:W",
+        "NW": "radiant-float:NW"
+      },
+      "motion": {
+        "keyframes": [
+          {
+            "at": 0,
+            "advance": 0,
+            "lift": 0
+          },
+          {
+            "at": 0.25,
+            "advance": 0.22,
+            "lift": 0.1
+          },
+          {
+            "at": 0.55,
+            "advance": 0.58,
+            "lift": 0.16
+          },
+          {
+            "at": 0.82,
+            "advance": 0.9,
+            "lift": 0.05
+          },
+          {
+            "at": 1,
+            "advance": 1,
+            "lift": 0
+          }
+        ]
+      }
+    }
+  },
+  "defaults": {
+    "scale": 1
+  }
+}

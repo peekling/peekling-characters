@@ -1,0 +1,173 @@
+{
+  "format": 1,
+  "name": "purl",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "Purl",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A woolly lamb who bounds forward on cloud-soft feet.",
+    "tags": ["purl", "native-v0.1", "hd-adaptive"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 3,
+      "logicalCellSize": 64,
+      "lineage": "purl-generated-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 64,
+          "sha256": "5d473c7185a2d383deb1bf11294203c7206de84b07ad480e91504f2456000ef3"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 128,
+          "sha256": "db559360692eb0d88b25260e0fc393989a6e185e803d30359d55a37024792b71"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 256,
+          "sha256": "b4d814ae618ac8db8fa4569e75ac7fac559948b2bb798df5e83295b155f7acb8"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1],
+      "durations": [900, 180],
+      "loop": true
+    },
+    "bound:N": {
+      "frames": [2, 3],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:NE": {
+      "frames": [4, 5],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:E": {
+      "frames": [6, 7],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:SE": {
+      "frames": [8, 9],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:W": {
+      "frames": [10, 11],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:SW": {
+      "frames": [12, 13],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:NW": {
+      "frames": [14, 15],
+      "fps": 6,
+      "loop": true
+    },
+    "bound:S": {
+      "frames": [16, 17],
+      "fps": 6,
+      "loop": true
+    },
+    "click": {
+      "frames": [18, 19],
+      "durations": [260, 160],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [20, 21],
+      "durations": [320, 160],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [22, 23],
+      "durations": [300, 180],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [24, 25],
+      "durations": [280, 160],
+      "loop": false
+    },
+    "happy": {
+      "frames": [26, 27],
+      "durations": [360, 180],
+      "loop": false
+    },
+    "success": {
+      "frames": [28, 29],
+      "durations": [420, 180],
+      "loop": false
+    },
+    "error": {
+      "frames": [30, 31],
+      "durations": [520, 220],
+      "loop": false
+    },
+    "sleep": {
+      "frames": [32, 33],
+      "durations": [900, 1500],
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "bound:N",
+        "NE": "bound:NE",
+        "E": "bound:E",
+        "SE": "bound:SE",
+        "S": "bound:S",
+        "SW": "bound:SW",
+        "W": "bound:W",
+        "NW": "bound:NW"
+      },
+      "motion": {
+        "keyframes": [
+          {
+            "at": 0,
+            "advance": 0,
+            "lift": 0
+          },
+          {
+            "at": 0.2,
+            "advance": 0.08,
+            "lift": 0.2
+          },
+          {
+            "at": 0.5,
+            "advance": 0.64,
+            "lift": 0.3
+          },
+          {
+            "at": 0.78,
+            "advance": 1,
+            "lift": 0
+          },
+          {
+            "at": 1,
+            "advance": 1,
+            "lift": 0
+          }
+        ]
+      }
+    }
+  },
+  "defaults": {
+    "scale": 1
+  }
+}

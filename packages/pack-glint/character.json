@@ -1,0 +1,168 @@
+{
+  "format": 1,
+  "name": "glint",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "Glint",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A glowing elemental wisp drifting wherever wonder leads.",
+    "tags": ["glint", "native-v0.1", "hd-adaptive"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 3,
+      "logicalCellSize": 64,
+      "lineage": "glint-generated-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 64,
+          "sha256": "6e58923567368f2c33395679b2d42cffd8e32ba3f5b19254494394776c6923be"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 128,
+          "sha256": "acccb4a8961488bd8fde065dbada4c8757b4332d92afaafa377a78da1048ffa2"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 256,
+          "sha256": "ccfbf967d14e8d3dd6d3ea85dbc0767c103e46193e373e5f770f7c247325d4ea"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1],
+      "durations": [900, 180],
+      "loop": true
+    },
+    "drift:N": {
+      "frames": [2, 3],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:NE": {
+      "frames": [4, 5],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:E": {
+      "frames": [6, 7],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:SE": {
+      "frames": [8, 9],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:W": {
+      "frames": [10, 11],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:SW": {
+      "frames": [12, 13],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:NW": {
+      "frames": [14, 15],
+      "fps": 6,
+      "loop": true
+    },
+    "drift:S": {
+      "frames": [16, 17],
+      "fps": 6,
+      "loop": true
+    },
+    "click": {
+      "frames": [18, 19],
+      "durations": [260, 160],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [20, 21],
+      "durations": [320, 160],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [22, 23],
+      "durations": [300, 180],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [24, 25],
+      "durations": [280, 160],
+      "loop": false
+    },
+    "happy": {
+      "frames": [26, 27],
+      "durations": [360, 180],
+      "loop": false
+    },
+    "success": {
+      "frames": [28, 29],
+      "durations": [420, 180],
+      "loop": false
+    },
+    "error": {
+      "frames": [30, 31],
+      "durations": [520, 220],
+      "loop": false
+    },
+    "sleep": {
+      "frames": [32, 33],
+      "durations": [900, 1500],
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "drift:N",
+        "NE": "drift:NE",
+        "E": "drift:E",
+        "SE": "drift:SE",
+        "S": "drift:S",
+        "SW": "drift:SW",
+        "W": "drift:W",
+        "NW": "drift:NW"
+      },
+      "motion": {
+        "keyframes": [
+          {
+            "at": 0,
+            "advance": 0,
+            "lift": 0
+          },
+          {
+            "at": 0.3,
+            "advance": 0.28,
+            "lift": 0.08
+          },
+          {
+            "at": 0.66,
+            "advance": 0.72,
+            "lift": 0.13
+          },
+          {
+            "at": 1,
+            "advance": 1,
+            "lift": 0
+          }
+        ]
+      }
+    }
+  },
+  "defaults": {
+    "scale": 1
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "format": 1,
+  "name": "rivet",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "Rivet",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A clockwork beetle who trundles along with careful purpose.",
+    "tags": ["rivet", "native-v0.1", "hd-adaptive"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 3,
+      "logicalCellSize": 64,
+      "lineage": "rivet-generated-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 64,
+          "sha256": "6563c5ea30669085008179bdec6b02e5ab49d2602002189ca7248781ed177ca2"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 128,
+          "sha256": "a33b8fe5c782db1825fef2a11a84471134ba20710f78133248c06ee3fa08b393"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 256,
+          "sha256": "00c45434cf8391e519f315540d1c10cb1a30054ff9b87a6a474a2a37d3fd36e9"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1],
+      "durations": [900, 180],
+      "loop": true
+    },
+    "trundle:N": {
+      "frames": [2, 3],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:NE": {
+      "frames": [4, 5],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:E": {
+      "frames": [6, 7],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:SE": {
+      "frames": [8, 9],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:W": {
+      "frames": [10, 11],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:SW": {
+      "frames": [12, 13],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:NW": {
+      "frames": [14, 15],
+      "fps": 6,
+      "loop": true
+    },
+    "trundle:S": {
+      "frames": [16, 17],
+      "fps": 6,
+      "loop": true
+    },
+    "click": {
+      "frames": [18, 19],
+      "durations": [260, 160],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [20, 21],
+      "durations": [320, 160],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [22, 23],
+      "durations": [300, 180],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [24, 25],
+      "durations": [280, 160],
+      "loop": false
+    },
+    "happy": {
+      "frames": [26, 27],
+      "durations": [360, 180],
+      "loop": false
+    },
+    "success": {
+      "frames": [28, 29],
+      "durations": [420, 180],
+      "loop": false
+    },
+    "error": {
+      "frames": [30, 31],
+      "durations": [520, 220],
+      "loop": false
+    },
+    "sleep": {
+      "frames": [32, 33],
+      "durations": [900, 1500],
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "trundle:N",
+        "NE": "trundle:NE",
+        "E": "trundle:E",
+        "SE": "trundle:SE",
+        "S": "trundle:S",
+        "SW": "trundle:SW",
+        "W": "trundle:W",
+        "NW": "trundle:NW"
+      }
+    }
+  },
+  "defaults": {
+    "scale": 1
+  }
+}

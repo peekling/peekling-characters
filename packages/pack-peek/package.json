@@ -1,0 +1,35 @@
+{
+  "name": "@peekling/pack-peek",
+  "version": "0.1.0",
+  "description": "Peek starter character pack for the Peekling native v0.1 profile",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Prajwal S. Venkateshmurthy",
+    "url": "https://prajwal.me"
+  },
+  "files": [
+    "character.json",
+    "atlas-1x.png",
+    "atlas-2x.png",
+    "atlas-4x.png",
+    "thumbnail.png",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build-character-roster.mjs peek && node ../../scripts/qa-character-pack.mjs peek",
+    "test": "node --test test/*.test.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peekling/peekling-characters.git",
+    "directory": "packages/pack-peek"
+  },
+  "bugs": {
+    "url": "https://github.com/peekling/peekling-characters/issues"
+  }
+}

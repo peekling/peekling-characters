@@ -1,0 +1,48 @@
+{
+  "name": "peekling-characters-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Private npm workspace for official Peekling character packs",
+  "license": "SEE LICENSE IN LICENSING.md",
+  "author": {
+    "name": "Prajwal S. Venkateshmurthy",
+    "url": "https://prajwal.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peekling/peekling-characters.git"
+  },
+  "bugs": {
+    "url": "https://github.com/peekling/peekling-characters/issues"
+  },
+  "type": "module",
+  "packageManager": "npm@11.19.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "boundaries": "node scripts/check-boundaries.mjs",
+    "changeset": "changeset",
+    "check": "npm run format:check && npm run roster:check && npm run boundaries && npm run release:check && npm test && npm run build && npm run size && npm run pack:check",
+    "format": "prettier --write package.json '.changeset/*.json' '.github/workflows/*.yml' 'packages/**/*.{json,mjs}' 'scripts/*.mjs' 'test/*.mjs'",
+    "format:check": "prettier --check package.json '.changeset/*.json' '.github/workflows/*.yml' 'packages/**/*.{json,mjs}' 'scripts/*.mjs' 'test/*.mjs'",
+    "prepublishOnly": "node scripts/refuse-root-publish.mjs",
+    "release": "changeset publish",
+    "release:check": "node scripts/check-release-workflow.mjs",
+    "roster": "node scripts/update-readme-roster.mjs",
+    "roster:check": "node scripts/update-readme-roster.mjs --check",
+    "size": "node scripts/check-size.mjs",
+    "pack:check": "node scripts/check-package-archives.mjs",
+    "test": "node --test test/*.test.mjs packages/*/test/*.test.mjs",
+    "version-packages": "changeset version"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "pngjs": "^7.0.0",
+    "prettier": "^3.6.2"
+  }
+}
