@@ -1,4 +1,4 @@
-![تتجمع شخصيات Peekling في مناظر طبيعية مشرقة ومرحبة](../assets/peekling-community-banner.png)
+![تتجمع شخصيات Peekling في مناظر طبيعية مشرقة ومرحبة](https://cdn.peekling.com/v1/community/peekling-community-banner.png)
 
 <div dir="rtl">
 
@@ -137,4 +137,4 @@
   <a href="../README.md">🇺🇸</a> · <a href="README.es.md">🇪🇸</a> · <a href="README.zh-CN.md">🇨🇳</a> · <a href="README.ko.md">🇰🇷</a> · <a href="README.ja.md">🇯🇵</a> · <a href="README.nl.md">🇳🇱</a> · <a href="README.ar.md">🇸🇦</a> · <a href="README.vi.md">🇻🇳</a> · <a href="README.ru.md">🇷🇺</a> · <a href="README.fr.md">🇫🇷</a> · <a href="README.hi.md">🇮🇳</a> · <a href="README.pt-BR.md">🇧🇷</a> · <a href="README.de.md">🇩🇪</a> · <a href="README.it.md">🇮🇹</a> · <a href="README.id.md">🇮🇩</a> · <a href="README.tr.md">🇹🇷</a> · <a href="README.pl.md">🇵🇱</a> · <a href="README.bn.md">🇧🇩</a>
 </p>
 
-![شريط ضيق من العشب والزهور البرية وأوراق الشجر ومسار متعرج](../assets/peekling-ground-footer-v1.png)
+![شريط ضيق من العشب والزهور البرية وأوراق الشجر ومسار متعرج](https://cdn.peekling.com/v1/community/peekling-ground-footer-v1.png)

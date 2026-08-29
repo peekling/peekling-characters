@@ -1,4 +1,4 @@
-![Personnages Peekling réunis dans un paysage lumineux et accueillant](../assets/peekling-community-banner.png)
+![Personnages Peekling réunis dans un paysage lumineux et accueillant](https://cdn.peekling.com/v1/community/peekling-community-banner.png)
 
 # Packs de personnages officiels Peekling
 
@@ -133,4 +133,4 @@ La redistribution doit respecter les conditions de licence et de notification ap
   <a href="../README.md">🇺🇸</a> · <a href="README.es.md">🇪🇸</a> · <a href="README.zh-CN.md">🇨🇳</a> · <a href="README.ko.md">🇰🇷</a> · <a href="README.ja.md">🇯🇵</a> · <a href="README.nl.md">🇳🇱</a> · <a href="README.ar.md">🇸🇦</a> · <a href="README.vi.md">🇻🇳</a> · <a href="README.ru.md">🇷🇺</a> · <a href="README.fr.md">🇫🇷</a> · <a href="README.hi.md">🇮🇳</a> · <a href="README.pt-BR.md">🇧🇷</a> · <a href="README.de.md">🇩🇪</a> · <a href="README.it.md">🇮🇹</a> · <a href="README.id.md">🇮🇩</a> · <a href="README.tr.md">🇹🇷</a> · <a href="README.pl.md">🇵🇱</a> · <a href="README.bn.md">🇧🇩</a>
 </p>
 
-![Une étroite bande d'herbe, de fleurs sauvages, de feuillage et un chemin sinueux](../assets/peekling-ground-footer-v1.png)
+![Une étroite bande d'herbe, de fleurs sauvages, de feuillage et un chemin sinueux](https://cdn.peekling.com/v1/community/peekling-ground-footer-v1.png)

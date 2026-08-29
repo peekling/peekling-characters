@@ -1,4 +1,4 @@
-![Peekling-Charaktere versammelten sich in einer hellen, einladenden Landschaft](../assets/peekling-community-banner.png)
+![Peekling-Charaktere versammelten sich in einer hellen, einladenden Landschaft](https://cdn.peekling.com/v1/community/peekling-community-banner.png)
 
 # Offizielle Peekling Charakterpakete
 
@@ -133,4 +133,4 @@ Die Weiterverbreitung muss den geltenden Lizenz- und Hinweisbedingungen für jed
   <a href="../README.md">🇺🇸</a> · <a href="README.es.md">🇪🇸</a> · <a href="README.zh-CN.md">🇨🇳</a> · <a href="README.ko.md">🇰🇷</a> · <a href="README.ja.md">🇯🇵</a> · <a href="README.nl.md">🇳🇱</a> · <a href="README.ar.md">🇸🇦</a> · <a href="README.vi.md">🇻🇳</a> · <a href="README.ru.md">🇷🇺</a> · <a href="README.fr.md">🇫🇷</a> · <a href="README.hi.md">🇮🇳</a> · <a href="README.pt-BR.md">🇧🇷</a> · <a href="README.de.md">🇩🇪</a> · <a href="README.it.md">🇮🇹</a> · <a href="README.id.md">🇮🇩</a> · <a href="README.tr.md">🇹🇷</a> · <a href="README.pl.md">🇵🇱</a> · <a href="README.bn.md">🇧🇩</a>
 </p>
 
-![Ein schmaler Streifen Gras, Wildblumen, Laub und ein gewundener Pfad](../assets/peekling-ground-footer-v1.png)
+![Ein schmaler Streifen Gras, Wildblumen, Laub und ein gewundener Pfad](https://cdn.peekling.com/v1/community/peekling-ground-footer-v1.png)

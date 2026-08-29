@@ -1,4 +1,4 @@
-![밝고 포근한 풍경에 모인 Peekling 캐릭터들](../assets/peekling-community-banner.png)
+![밝고 포근한 풍경에 모인 Peekling 캐릭터들](https://cdn.peekling.com/v1/community/peekling-community-banner.png)
 
 # 공식 Peekling 캐릭터 팩
 
@@ -133,4 +133,4 @@ Node.js 22 이상이 필요합니다. 작업공간은 패키지 관리자로 npm
   <a href="../README.md">🇺🇸</a> · <a href="README.es.md">🇪🇸</a> · <a href="README.zh-CN.md">🇨🇳</a> · <a href="README.ko.md">🇰🇷</a> · <a href="README.ja.md">🇯🇵</a> · <a href="README.nl.md">🇳🇱</a> · <a href="README.ar.md">🇸🇦</a> · <a href="README.vi.md">🇻🇳</a> · <a href="README.ru.md">🇷🇺</a> · <a href="README.fr.md">🇫🇷</a> · <a href="README.hi.md">🇮🇳</a> · <a href="README.pt-BR.md">🇧🇷</a> · <a href="README.de.md">🇩🇪</a> · <a href="README.it.md">🇮🇹</a> · <a href="README.id.md">🇮🇩</a> · <a href="README.tr.md">🇹🇷</a> · <a href="README.pl.md">🇵🇱</a> · <a href="README.bn.md">🇧🇩</a>
 </p>
 
-![좁은 잔디밭, 야생화, 나뭇잎, 구불구불한 길](../assets/peekling-ground-footer-v1.png)
+![좁은 잔디밭, 야생화, 나뭇잎, 구불구불한 길](https://cdn.peekling.com/v1/community/peekling-ground-footer-v1.png)

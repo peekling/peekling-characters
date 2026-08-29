@@ -1,4 +1,4 @@
-![Peekling অক্ষরগুলি একটি উজ্জ্বল, স্বাগত ল্যান্ডস্কেপে জড়ো হয়েছে৷](../assets/peekling-community-banner.png)
+![Peekling অক্ষরগুলি একটি উজ্জ্বল, স্বাগত ল্যান্ডস্কেপে জড়ো হয়েছে৷](https://cdn.peekling.com/v1/community/peekling-community-banner.png)
 
 # অফিসিয়াল Peekling ক্যারেক্টার প্যাক
 
@@ -132,4 +132,4 @@ Peekling প্রকল্প দ্বারা তৈরি এবং রক�
   <a href="../README.md">🇺🇸</a> · <a href="README.es.md">🇪🇸</a> · <a href="README.zh-CN.md">🇨🇳</a> · <a href="README.ko.md">🇰🇷</a> · <a href="README.ja.md">🇯🇵</a> · <a href="README.nl.md">🇳🇱</a> · <a href="README.ar.md">🇸🇦</a> · <a href="README.vi.md">🇻🇳</a> · <a href="README.ru.md">🇷🇺</a> · <a href="README.fr.md">🇫🇷</a> · <a href="README.hi.md">🇮🇳</a> · <a href="README.pt-BR.md">🇧🇷</a> · <a href="README.de.md">🇩🇪</a> · <a href="README.it.md">🇮🇹</a> · <a href="README.id.md">🇮🇩</a> · <a href="README.tr.md">🇹🇷</a> · <a href="README.pl.md">🇵🇱</a> · <a href="README.bn.md">🇧🇩</a>
 </p>
 
-![ঘাসের একটি সরু ফালা, বন্য ফুল, ঝরা পাতা, এবং একটি ঘুর পথ](../assets/peekling-ground-footer-v1.png)
+![ঘাসের একটি সরু ফালা, বন্য ফুল, ঝরা পাতা, এবং একটি ঘুর পথ](https://cdn.peekling.com/v1/community/peekling-ground-footer-v1.png)
