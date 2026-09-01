@@ -25,15 +25,19 @@ for (const directory of packageDirectories) {
   const introduction =
     id === "byte"
       ? "Byte is a data-only Pack for Peekling. The cyber cat has 100 named states for rest, looking around, emotion, interaction, technology, and movement."
-      : id === "x3"
-        ? "X3 is an independently publishable, data-only character pack for Peekling. Its two cyan LED eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion without displaying identity text."
-        : id === "posh"
-          ? "Posh is an independently publishable, data-only character pack for Peekling. Its pearl-white orb and expressive navy eyes perform 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion."
-          : `${title} is an independently publishable, data-only character pack for Peekling. It uses the adaptive native v0.1 profile with 64, 128, and 256px source cells.`;
+      : id === "nib"
+        ? "Nib is a data-only Pack for Peekling. This tiny racing car has 100 named states for rest, looking around, emotion, interaction, technology, and movement."
+        : id === "x3"
+          ? "X3 is an independently publishable, data-only character pack for Peekling. Its two cyan LED eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion without displaying identity text."
+          : id === "posh"
+            ? "Posh is an independently publishable, data-only character pack for Peekling. Its pearl-white orb and expressive navy eyes perform 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion."
+            : `${title} is an independently publishable, data-only character pack for Peekling. It uses the adaptive native v0.1 profile with 64, 128, and 256px source cells.`;
   const packageSummary =
     id === "byte"
       ? "The Pack uses 32, 64, and 128px atlas densities at native scale 2. Every state starts on a pixel-distinct signature frame. Directional run, chase, and dash states change both pose and pace. Byte keeps the same visor, circuit seams, segmented tail, and cyan effects throughout."
-      : "The package contains `character.json`, its referenced atlases, `thumbnail.png`, and the applicable public legal records. Atlas hashes are recorded in `character.json`. Development scripts, source material, and tests stay in this monorepo and are not published.";
+      : id === "nib"
+        ? "The Pack uses 32, 64, and 128px atlas densities at native scale 2. Every state starts on a pixel-distinct signature frame. Directional cruise, race, and boost states change the car's pose, pace, motion trail, and wheel phase. Nib keeps the same windshield eyes, gold stripe, spoiler, and cyan telemetry effects throughout."
+        : "The package contains `character.json`, its referenced atlases, `thumbnail.png`, and the applicable public legal records. Atlas hashes are recorded in `character.json`. Development scripts, source material, and tests stay in this monorepo and are not published.";
 
   delete packageManifest.private;
   packageManifest.license = "Apache-2.0";
