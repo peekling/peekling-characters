@@ -72,4 +72,6 @@ jobs:
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
       - run: npm ci
-      - run: npm run release
+      - run: npm run release:confirmed
+        env:
+          CONFIRMED_RELEASE_SET: ${{ needs.prepare.outputs.release_set }}

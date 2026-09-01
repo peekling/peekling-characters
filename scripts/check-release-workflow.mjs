@@ -78,13 +78,14 @@ for (const expected of [
   "vars.PEEKLING_AUTO_PUBLISH == 'true'",
   "npm run release:candidates -- --github-output",
   'npm run release:candidates -- --require "$CONFIRMED_RELEASE_SET"',
+  "CONFIRMED_RELEASE_SET: ${{ needs.prepare.outputs.release_set }}",
   "environment: npm",
   "id-token: write",
   'node-version: "24"',
   "registry-url: https://registry.npmjs.org",
   "package-manager-cache: false",
   "npm run check",
-  "npm run release",
+  "npm run release:confirmed",
 ])
   if (!publish.includes(expected))
     failures.push(`publish.yml lacks ${expected}`);

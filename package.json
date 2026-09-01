@@ -34,6 +34,7 @@
     "prepublishOnly": "node scripts/refuse-root-publish.mjs",
     "release": "changeset publish",
     "release:candidates": "node scripts/check-publish-candidates.mjs",
+    "release:confirmed": "node scripts/publish-confirmed.mjs",
     "release:check": "node scripts/check-release-workflow.mjs",
     "release-plan:check": "node scripts/check-pr-release-plan.mjs",
     "roster": "node scripts/update-readme-roster.mjs",
