@@ -18,7 +18,6 @@ const names = [
   "quill",
   "vali",
   "nib",
-  "byte",
   "tumble",
   "rivet",
   "purl",

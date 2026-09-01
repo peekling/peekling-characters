@@ -23,11 +23,17 @@ for (const directory of packageDirectories) {
   const originalPackageData = JSON.stringify(packageManifest);
   const originalManifestData = JSON.stringify(manifest);
   const introduction =
-    id === "x3"
-      ? "X3 is an independently publishable, data-only character pack for Peekling. Its two cyan LED eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion without displaying identity text."
-      : id === "posh"
-        ? "Posh is an independently publishable, data-only character pack for Peekling. Its pearl-white orb and expressive navy eyes perform 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion."
-        : `${title} is an independently publishable, data-only character pack for Peekling. It uses the adaptive native v0.1 profile with 64, 128, and 256px source cells.`;
+    id === "byte"
+      ? "Byte is a data-only Pack for Peekling. The cyber cat has 100 named states for rest, looking around, emotion, interaction, technology, and movement."
+      : id === "x3"
+        ? "X3 is an independently publishable, data-only character pack for Peekling. Its two cyan LED eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion without displaying identity text."
+        : id === "posh"
+          ? "Posh is an independently publishable, data-only character pack for Peekling. Its pearl-white orb and expressive navy eyes perform 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion."
+          : `${title} is an independently publishable, data-only character pack for Peekling. It uses the adaptive native v0.1 profile with 64, 128, and 256px source cells.`;
+  const packageSummary =
+    id === "byte"
+      ? "The Pack uses 32, 64, and 128px atlas densities at native scale 2. Every state starts on a pixel-distinct signature frame. Directional run, chase, and dash states change both pose and pace. Byte keeps the same visor, circuit seams, segmented tail, and cyan effects throughout."
+      : "The package contains `character.json`, its referenced atlases, `thumbnail.png`, and the applicable public legal records. Atlas hashes are recorded in `character.json`. Development scripts, source material, and tests stay in this monorepo and are not published.";
 
   delete packageManifest.private;
   packageManifest.license = "Apache-2.0";
@@ -71,7 +77,7 @@ for (const directory of packageDirectories) {
   );
   await writeFile(
     path.join(root, "README.md"),
-    `# \`@peekling/pack-${id}\`\n\n${introduction}\n\n## Install\n\n\`\`\`sh\nnpm install @peekling/pack-${id}@${packageManifest.version}\n\`\`\`\n\nThe package contains \`character.json\`, its referenced atlases, \`thumbnail.png\`, and the applicable public legal records. Atlas hashes are recorded in \`character.json\`. Development scripts, source material, and tests stay in this monorepo and are not published.\n\n${title} is licensed under Apache-2.0. Redistributions must comply with Section 4 of the Apache License 2.0, including its applicable notice-retention requirements. See this package's \`LICENSE\` and \`NOTICE\` files.\n\nRun \`npm test -w @peekling/pack-${id}\` to validate the pack, or \`npm run build -w @peekling/pack-${id}\` to rebuild and run artwork QA.\n`,
+    `# \`@peekling/pack-${id}\`\n\n${introduction}\n\n## Install\n\n\`\`\`sh\nnpm install @peekling/pack-${id}@${packageManifest.version}\n\`\`\`\n\n${packageSummary}\n\n${title} is licensed under Apache-2.0. Redistributions must comply with Section 4 of the Apache License 2.0, including its applicable notice-retention requirements. See this package's \`LICENSE\` and \`NOTICE\` files.\n\nRun \`npm test -w @peekling/pack-${id}\` to validate the pack, or \`npm run build -w @peekling/pack-${id}\` to rebuild and run artwork QA.\n`,
   );
 }
 

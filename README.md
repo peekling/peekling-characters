@@ -26,13 +26,13 @@ The manifest records safe relative image paths and SHA-256 hashes for every atla
 This table is generated from the current package metadata and the live npm registry. Published rows link to their verified npm version. Packs that are still source-only stay visible with an explicit `(unreleased)` label and no npm link.
 
 <!-- PACK_ROSTER_START -->
-28 character packs are published and installable from npm. 2 packs are shown as unreleased for future follow-up.
+30 character packs are published and installable from npm. 0 packs are shown as unreleased for future follow-up.
 
 | Preview | Character | Description | Version | Package |
 | :---: | --- | --- | --- | --- |
 | ![Bramble](packages/pack-bramble/thumbnail.png) | [Bramble](packages/pack-bramble) | A warm forest bear with a slow, reassuring lumber. | `0.1.1` | [`@peekling/pack-bramble`](https://www.npmjs.com/package/@peekling/pack-bramble/v/0.1.1) |
 | ![Buns](packages/pack-buns/thumbnail.png) | [Buns](packages/pack-buns) | A round burger buddy who rolls forward and settles softly. | `0.1.1` | [`@peekling/pack-buns`](https://www.npmjs.com/package/@peekling/pack-buns/v/0.1.1) |
-| ![Byte](packages/pack-byte/thumbnail.png) | [Byte](packages/pack-byte) | A quick cyber cat with a bright visor and quiet paws. | `0.1.1` | [`@peekling/pack-byte`](https://www.npmjs.com/package/@peekling/pack-byte/v/0.1.1) |
+| ![Byte](packages/pack-byte/thumbnail.png) | [Byte](packages/pack-byte) | A futuristic cyber cat that runs, chases, scans, and reacts through a cyan visor and animated tech effects. | `0.1.1` | [`@peekling/pack-byte`](https://www.npmjs.com/package/@peekling/pack-byte/v/0.1.1) |
 | ![Crumb](packages/pack-crumb/thumbnail.png) | [Crumb](packages/pack-crumb) | A toast-sized friend who skips without dropping a crumb. | `0.1.1` | [`@peekling/pack-crumb`](https://www.npmjs.com/package/@peekling/pack-crumb/v/0.1.1) |
 | ![Ember](packages/pack-ember/thumbnail.png) | [Ember](packages/pack-ember) | A rust-red forest friend with a bright, adventurous streak. | `0.1.1` | [`@peekling/pack-ember`](https://www.npmjs.com/package/@peekling/pack-ember/v/0.1.1) |
 | ![Fable](packages/pack-fable/thumbnail.png) | [Fable](packages/pack-fable) | A clever terracotta fox always ready for the next trail. | `0.1.1` | [`@peekling/pack-fable`](https://www.npmjs.com/package/@peekling/pack-fable/v/0.1.1) |
@@ -47,7 +47,7 @@ This table is generated from the current package metadata and the live npm regis
 | ![Orbit](packages/pack-orbit/thumbnail.png) | [Orbit](packages/pack-orbit) | A round little robot with a cool display and precise tiny steps. | `0.1.1` | [`@peekling/pack-orbit`](https://www.npmjs.com/package/@peekling/pack-orbit/v/0.1.1) |
 | ![Peek](packages/pack-peek/thumbnail.png) | [Peek](packages/pack-peek) | A curious kitten-fox who follows pointers and celebrates small wins. | `0.1.1` | [`@peekling/pack-peek`](https://www.npmjs.com/package/@peekling/pack-peek/v/0.1.1) |
 | ![Pip](packages/pack-pip/thumbnail.png) | [Pip](packages/pack-pip) | A warm-gold corgi who trots into every little celebration. | `0.1.1` | [`@peekling/pack-pip`](https://www.npmjs.com/package/@peekling/pack-pip/v/0.1.1) |
-| ![Posh](packages/pack-posh/thumbnail.png) | [Posh](packages/pack-posh) | A pearl-white orb whose expressive eyes turn every movement and feeling into a readable performance. | `0.1.1` (unreleased) | `@peekling/pack-posh` (unreleased) |
+| ![Posh](packages/pack-posh/thumbnail.png) | [Posh](packages/pack-posh) | A pearl-white orb whose expressive eyes turn every movement and feeling into a readable performance. | `0.1.1` | [`@peekling/pack-posh`](https://www.npmjs.com/package/@peekling/pack-posh/v/0.1.1) |
 | ![Purl](packages/pack-purl/thumbnail.png) | [Purl](packages/pack-purl) | A woolly lamb who bounds forward on cloud-soft feet. | `0.1.1` | [`@peekling/pack-purl`](https://www.npmjs.com/package/@peekling/pack-purl/v/0.1.1) |
 | ![Quill](packages/pack-quill/thumbnail.png) | [Quill](packages/pack-quill) | A thoughtful scholar owl who flutters between bright ideas. | `0.1.1` | [`@peekling/pack-quill`](https://www.npmjs.com/package/@peekling/pack-quill/v/0.1.1) |
 | ![Rivet](packages/pack-rivet/thumbnail.png) | [Rivet](packages/pack-rivet) | A clockwork beetle who trundles along with careful purpose. | `0.1.1` | [`@peekling/pack-rivet`](https://www.npmjs.com/package/@peekling/pack-rivet/v/0.1.1) |
@@ -58,7 +58,7 @@ This table is generated from the current package metadata and the live npm regis
 | ![Tumble](packages/pack-tumble/thumbnail.png) | [Tumble](packages/pack-tumble) | A cheerful cactus wanderer with a tiny western swagger. | `0.1.1` | [`@peekling/pack-tumble`](https://www.npmjs.com/package/@peekling/pack-tumble/v/0.1.1) |
 | ![Vali](packages/pack-vali/thumbnail.png) | [Vali](packages/pack-vali) | A brave little slime whose bouncy courage fills the room. | `0.1.1` | [`@peekling/pack-vali`](https://www.npmjs.com/package/@peekling/pack-vali/v/0.1.1) |
 | ![Waddle](packages/pack-waddle/thumbnail.png) | [Waddle](packages/pack-waddle) | A scarf-wrapped penguin with a gentle side-to-side waddle. | `0.1.1` | [`@peekling/pack-waddle`](https://www.npmjs.com/package/@peekling/pack-waddle/v/0.1.1) |
-| ![X3](packages/pack-x3/thumbnail.png) | [X3](packages/pack-x3) | A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship. | `0.1.1` (unreleased) | `@peekling/pack-x3` (unreleased) |
+| ![X3](packages/pack-x3/thumbnail.png) | [X3](packages/pack-x3) | A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship. | `0.1.1` | [`@peekling/pack-x3`](https://www.npmjs.com/package/@peekling/pack-x3/v/0.1.1) |
 | ![Zesty](packages/pack-zesty/thumbnail.png) | [Zesty](packages/pack-zesty) | A lively pizza slice who scoots with a confident tilt. | `0.1.1` | [`@peekling/pack-zesty`](https://www.npmjs.com/package/@peekling/pack-zesty/v/0.1.1) |
 <!-- PACK_ROSTER_END -->
 
