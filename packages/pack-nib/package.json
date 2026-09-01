@@ -1,7 +1,7 @@
 {
   "name": "@peekling/pack-nib",
-  "version": "0.1.0",
-  "description": "Nib HD character pack for Peekling",
+  "version": "0.1.1",
+  "description": "Racing-car Peekling Pack with 100 movement, emotion, interaction, and technology states",
   "license": "Apache-2.0",
   "files": [
     "character.json",
@@ -14,7 +14,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "node ../../scripts/build-character-roster.mjs && node ../../scripts/qa-character-pack.mjs nib",
+    "build": "node source/build.mjs --sync && node --test test/*.test.mjs && node ../../scripts/qa-character-pack.mjs nib",
     "test": "node --test test/*.test.mjs"
   },
   "author": {
