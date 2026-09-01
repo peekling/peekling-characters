@@ -48,6 +48,20 @@ test("Nib uses adaptive densities while retaining its 64px rendered presence", (
   assert.equal(pack.assets.atlases.rows, 7);
 });
 
+test("Nib provides every State used by the shared website pointer Plan", () => {
+  for (const state of [
+    "idle",
+    "click",
+    "scroll",
+    "double-click",
+    "context-click",
+    "happy",
+    "success",
+    "error",
+  ])
+    assert.ok(pack.states[state], `missing ${state}`);
+});
+
 test("windshield eyes cover a broad emotional range", () => {
   for (const emotion of [
     "happy",

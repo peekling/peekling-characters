@@ -5,7 +5,7 @@ Byte is a data-only Pack for Peekling. The cyber cat has 100 named states for re
 ## Install
 
 ```sh
-npm install @peekling/pack-byte@0.1.2
+npm install @peekling/pack-byte@0.1.3
 ```
 
 The Pack uses 32, 64, and 128px atlas densities at native scale 2. Every state starts on a pixel-distinct signature frame. Directional run, chase, and dash states change both pose and pace. Byte keeps the same visor, circuit seams, segmented tail, and cyan effects throughout.

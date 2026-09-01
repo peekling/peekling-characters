@@ -1,6 +1,6 @@
 export const CHARACTER_ID = "byte";
 export const CHARACTER_TITLE = "Byte";
-export const VERSION = "0.1.1";
+export const VERSION = "0.1.3";
 export const LICENSE_ID = "Apache-2.0";
 export const COLUMNS = 16;
 export const ROWS = 7;
@@ -66,7 +66,7 @@ export const STATE_GROUPS = Object.freeze({
     "press",
     "release",
     "drag",
-    "drag-hover",
+    "scroll",
     "drop",
     "scroll:fly",
     "scroll:fall",
@@ -202,7 +202,7 @@ const EFFECTS = Object.freeze({
     "press",
     "release",
     "drag",
-    "drag-hover",
+    "scroll",
     "drop",
     "fly",
     "fall",

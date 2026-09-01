@@ -512,8 +512,10 @@ function drawEffect(image, frame, behind) {
       drawRing(image, 101, 39, 12, 3, CYAN);
       break;
     case "drag":
-    case "drag-hover":
-      drawDragPath(image, effect === "drag-hover" ? PINK : CYAN);
+      drawDragPath(image, CYAN);
+      break;
+    case "scroll":
+      drawScrollEffect(image, frame.variant % 2 ? 1 : -1, PINK);
       break;
     case "drop":
       drawReticle(image, 101, 37, 10, GOLD);

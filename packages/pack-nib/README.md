@@ -5,7 +5,7 @@ Nib is a data-only Pack for Peekling. This tiny racing car has 100 named states 
 ## Install
 
 ```sh
-npm install @peekling/pack-nib@1.0.0
+npm install @peekling/pack-nib@1.0.1
 ```
 
 The Pack uses 32, 64, and 128px atlas densities at native scale 2. Every state starts on a pixel-distinct signature frame. Directional cruise, race, and boost states change the car's pose, pace, motion trail, and wheel phase. Nib keeps the same windshield eyes, gold stripe, spoiler, and cyan telemetry effects throughout.

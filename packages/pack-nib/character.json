@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "nib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "metadata": {
     "title": "Nib",
@@ -20,19 +20,19 @@
           "src": "atlas-1x.png",
           "density": 1,
           "sourceCellSize": 32,
-          "sha256": "94b4628c455888cc6f6b9ac1a3f2954a8327254ab9ed66545b8ecdafaa4927d7"
+          "sha256": "efc89acb163c081c68fde4020b6c92a4d3bec5ad66098ab4ae8d8ee2bbef2e59"
         },
         {
           "src": "atlas-2x.png",
           "density": 2,
           "sourceCellSize": 64,
-          "sha256": "fd353e6d63936971fc9853065222aa4a1c059fb3c31efc0dff47fab0fb196b4d"
+          "sha256": "c9217175ad49e7916f4df28746565ee1b8910ffdf15f28e3275c9f583519829c"
         },
         {
           "src": "atlas-4x.png",
           "density": 4,
           "sourceCellSize": 128,
-          "sha256": "36aea6256f1f8fa6a7d4295fdfa9dd26718478cc209da3e58ba672dca4ae3ba4"
+          "sha256": "106f7bd23e22c7f988a8afda105c9ba25584bee695f070d0c23cf306a768e80a"
         }
       ]
     }
@@ -113,11 +113,7 @@
     "press": { "frames": [48, 49], "durations": [180, 260], "loop": false },
     "release": { "frames": [49, 50], "durations": [180, 260], "loop": false },
     "drag": { "frames": [50, 51], "durations": [180, 260], "loop": false },
-    "drag-hover": {
-      "frames": [51, 52],
-      "durations": [180, 260],
-      "loop": false
-    },
+    "scroll": { "frames": [51, 52], "durations": [180, 260], "loop": false },
     "drop": { "frames": [52, 53], "durations": [180, 260], "loop": false },
     "scroll:fly": {
       "frames": [53, 54],

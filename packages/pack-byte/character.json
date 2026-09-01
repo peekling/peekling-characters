@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "byte",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "Apache-2.0",
   "metadata": {
     "title": "Byte",
@@ -20,19 +20,19 @@
           "src": "atlas-1x.png",
           "density": 1,
           "sourceCellSize": 32,
-          "sha256": "a713f6507e8ee115c8b8cc83c23ffbef51b10cf0a5ca5b77fd9800e9da5553b8"
+          "sha256": "68aab83196d93ec95d362ee4f8c1b42e044e1f1184675e829009b18e5117311c"
         },
         {
           "src": "atlas-2x.png",
           "density": 2,
           "sourceCellSize": 64,
-          "sha256": "de4670c9931218f991bbe9813087dea56caa3285972f05da109e19450707cfc9"
+          "sha256": "c7f183ff549c90ef10c1c3f1a9058b8f0a577786aa33680b67a23cbc24efdc92"
         },
         {
           "src": "atlas-4x.png",
           "density": 4,
           "sourceCellSize": 128,
-          "sha256": "ab52e66f087ea8472dccc5bd8113d01c515b3f740fed5218dd8e4cfd79023e04"
+          "sha256": "b2137bf8998b6c88c64442f1739187ca5b870132da17d475df85b7667a8947cf"
         }
       ]
     }
@@ -105,11 +105,7 @@
     "press": { "frames": [48, 49], "durations": [180, 260], "loop": false },
     "release": { "frames": [49, 50], "durations": [180, 260], "loop": false },
     "drag": { "frames": [50, 51], "durations": [180, 260], "loop": false },
-    "drag-hover": {
-      "frames": [51, 52],
-      "durations": [180, 260],
-      "loop": false
-    },
+    "scroll": { "frames": [51, 52], "durations": [180, 260], "loop": false },
     "drop": { "frames": [52, 53], "durations": [180, 260], "loop": false },
     "scroll:fly": {
       "frames": [53, 54],
