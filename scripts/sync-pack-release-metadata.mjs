@@ -24,8 +24,10 @@ for (const directory of packageDirectories) {
   const originalManifestData = JSON.stringify(manifest);
   const introduction =
     id === "x3"
-      ? "X3 is an independently publishable, data-only character pack for Peekling. Its cyan X and 3 screen-eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion."
-      : `${title} is an independently publishable, data-only character pack for Peekling. It uses the adaptive native v0.1 profile with 64, 128, and 256px source cells.`;
+      ? "X3 is an independently publishable, data-only character pack for Peekling. Its two cyan LED eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion without displaying identity text."
+      : id === "posh"
+        ? "Posh is an independently publishable, data-only character pack for Peekling. Its pearl-white orb and expressive navy eyes perform 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion."
+        : `${title} is an independently publishable, data-only character pack for Peekling. It uses the adaptive native v0.1 profile with 64, 128, and 256px source cells.`;
 
   delete packageManifest.private;
   packageManifest.license = "Apache-2.0";

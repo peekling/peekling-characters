@@ -134,6 +134,7 @@ const DIRECTIONS = Object.freeze({
 });
 
 const BASE_EYE = Object.freeze({
+  style: "led-capsule",
   x: 0,
   y: 0,
   gazeX: 0,
@@ -1094,14 +1095,13 @@ const RECIPES = {
   ),
 };
 
-function mergeEye(glyph, common, side, index, isLeft) {
+function mergeEye(common, side, index, isLeft) {
   const phaseX = ((index % 9) - 4) * 0.045;
   const phaseY = ((Math.floor(index / 9) % 9) - 4) * 0.035;
   return {
     ...BASE_EYE,
     ...common,
     ...side,
-    glyph,
     x: (side.x ?? common.x ?? BASE_EYE.x) + phaseX * (isLeft ? 1 : -1),
     y: (side.y ?? common.y ?? BASE_EYE.y) + phaseY * (isLeft ? -1 : 1),
     scanPhase: ((index * (isLeft ? 7 : 11)) % 29) / 29,
@@ -1123,8 +1123,8 @@ export function createExpressions() {
         mechanics: "body-locked-screen-face",
         body: { ...BASE_BODY, ...recipe.body },
         eyes: {
-          left: mergeEye("X", recipe.common, recipe.left, index, true),
-          right: mergeEye("3", recipe.common, recipe.right, index, false),
+          left: mergeEye(recipe.common, recipe.left, index, true),
+          right: mergeEye(recipe.common, recipe.right, index, false),
         },
       });
     }
@@ -1207,7 +1207,7 @@ export function createManifest(hashes) {
       title: CHARACTER_TITLE,
       author: "Prajwal S. Venkateshmurthy",
       description:
-        "A gentle retro terminal whose cyan X and 3 screen-eyes turn activity into expressive companionship.",
+        "A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship.",
       tags: [
         "x3",
         "screen-face",

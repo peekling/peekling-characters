@@ -26,7 +26,7 @@ The manifest records safe relative image paths and SHA-256 hashes for every atla
 This table is generated from the current package metadata and the live npm registry. Published rows link to their verified npm version. Packs that are still source-only stay visible with an explicit `(unreleased)` label and no npm link.
 
 <!-- PACK_ROSTER_START -->
-28 character packs are published and installable from npm. 1 pack is shown as unreleased for future follow-up.
+28 character packs are published and installable from npm. 2 packs are shown as unreleased for future follow-up.
 
 | Preview | Character | Description | Version | Package |
 | :---: | --- | --- | --- | --- |
@@ -47,6 +47,7 @@ This table is generated from the current package metadata and the live npm regis
 | ![Orbit](packages/pack-orbit/thumbnail.png) | [Orbit](packages/pack-orbit) | A round little robot with a cool display and precise tiny steps. | `0.1.1` | [`@peekling/pack-orbit`](https://www.npmjs.com/package/@peekling/pack-orbit/v/0.1.1) |
 | ![Peek](packages/pack-peek/thumbnail.png) | [Peek](packages/pack-peek) | A curious kitten-fox who follows pointers and celebrates small wins. | `0.1.1` | [`@peekling/pack-peek`](https://www.npmjs.com/package/@peekling/pack-peek/v/0.1.1) |
 | ![Pip](packages/pack-pip/thumbnail.png) | [Pip](packages/pack-pip) | A warm-gold corgi who trots into every little celebration. | `0.1.1` | [`@peekling/pack-pip`](https://www.npmjs.com/package/@peekling/pack-pip/v/0.1.1) |
+| ![Posh](packages/pack-posh/thumbnail.png) | [Posh](packages/pack-posh) | A pearl-white orb whose expressive eyes turn every movement and feeling into a readable performance. | `0.1.0` (unreleased) | `@peekling/pack-posh` (unreleased) |
 | ![Purl](packages/pack-purl/thumbnail.png) | [Purl](packages/pack-purl) | A woolly lamb who bounds forward on cloud-soft feet. | `0.1.1` | [`@peekling/pack-purl`](https://www.npmjs.com/package/@peekling/pack-purl/v/0.1.1) |
 | ![Quill](packages/pack-quill/thumbnail.png) | [Quill](packages/pack-quill) | A thoughtful scholar owl who flutters between bright ideas. | `0.1.1` | [`@peekling/pack-quill`](https://www.npmjs.com/package/@peekling/pack-quill/v/0.1.1) |
 | ![Rivet](packages/pack-rivet/thumbnail.png) | [Rivet](packages/pack-rivet) | A clockwork beetle who trundles along with careful purpose. | `0.1.1` | [`@peekling/pack-rivet`](https://www.npmjs.com/package/@peekling/pack-rivet/v/0.1.1) |
@@ -57,7 +58,7 @@ This table is generated from the current package metadata and the live npm regis
 | ![Tumble](packages/pack-tumble/thumbnail.png) | [Tumble](packages/pack-tumble) | A cheerful cactus wanderer with a tiny western swagger. | `0.1.1` | [`@peekling/pack-tumble`](https://www.npmjs.com/package/@peekling/pack-tumble/v/0.1.1) |
 | ![Vali](packages/pack-vali/thumbnail.png) | [Vali](packages/pack-vali) | A brave little slime whose bouncy courage fills the room. | `0.1.1` | [`@peekling/pack-vali`](https://www.npmjs.com/package/@peekling/pack-vali/v/0.1.1) |
 | ![Waddle](packages/pack-waddle/thumbnail.png) | [Waddle](packages/pack-waddle) | A scarf-wrapped penguin with a gentle side-to-side waddle. | `0.1.1` | [`@peekling/pack-waddle`](https://www.npmjs.com/package/@peekling/pack-waddle/v/0.1.1) |
-| ![X3](packages/pack-x3/thumbnail.png) | [X3](packages/pack-x3) | A gentle retro terminal whose cyan X and 3 screen-eyes turn activity into expressive companionship. | `0.1.0` (unreleased) | `@peekling/pack-x3` (unreleased) |
+| ![X3](packages/pack-x3/thumbnail.png) | [X3](packages/pack-x3) | A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship. | `0.1.0` (unreleased) | `@peekling/pack-x3` (unreleased) |
 | ![Zesty](packages/pack-zesty/thumbnail.png) | [Zesty](packages/pack-zesty) | A lively pizza slice who scoots with a confident tilt. | `0.1.1` | [`@peekling/pack-zesty`](https://www.npmjs.com/package/@peekling/pack-zesty/v/0.1.1) |
 <!-- PACK_ROSTER_END -->
 
@@ -126,7 +127,7 @@ This repository is the curated home for official Peekling packs, not a global co
 
 ## Licensing and attribution
 
-Repository tooling, tests, and documentation are licensed under [Apache-2.0](LICENSE). All 29 current official character packs also declare Apache-2.0 and carry their own `LICENSE` and `NOTICE` files.
+Repository tooling, tests, and documentation are licensed under [Apache-2.0](LICENSE). All 30 current official character packs also declare Apache-2.0 and carry their own `LICENSE` and `NOTICE` files.
 
 Redistribution must follow the applicable license and notice terms for each pack. The Peekling name, logo, official mascot, and other distinctive brand identity are not granted by the tooling license unless a specific asset license says otherwise. See [licensing and attribution](LICENSING.md), [NOTICE](NOTICE), and [AUTHORS](AUTHORS) for the complete records.
 

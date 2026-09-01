@@ -7,6 +7,9 @@ execFileSync(process.execPath, ["scripts/build-character-roster.mjs"], {
 execFileSync("npm", ["run", "build", "-w", "@peekling/pack-x3"], {
   stdio: "inherit",
 });
+execFileSync("npm", ["run", "build", "-w", "@peekling/pack-posh"], {
+  stdio: "inherit",
+});
 execFileSync(process.execPath, ["scripts/sync-pack-release-metadata.mjs"], {
   stdio: "inherit",
 });

@@ -1,38 +1,38 @@
 {
   "format": 1,
-  "name": "x3",
+  "name": "posh",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "metadata": {
-    "title": "X3",
+    "title": "Posh",
     "author": "Prajwal S. Venkateshmurthy",
-    "description": "A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship.",
-    "tags": ["x3", "screen-face", "retro-computer", "hd-adaptive", "100-states"]
+    "description": "A pearl-white orb whose expressive eyes turn every movement and feeling into a readable performance.",
+    "tags": ["posh", "orb", "eye-driven", "hd-adaptive", "100-states"]
   },
   "assets": {
     "atlases": {
       "columns": 10,
       "rows": 10,
       "logicalCellSize": 48,
-      "lineage": "x3-procedural-hd-v1",
+      "lineage": "posh-procedural-hd-v1",
       "variants": [
         {
           "src": "atlas-1x.png",
           "density": 1,
           "sourceCellSize": 48,
-          "sha256": "df7f221d1f0a1a2b29cecde400b3c965d48f2526f04b6f172999d6d3c94069ef"
+          "sha256": "0e32d3754d22895d84a00c48defe79a81b759cfba67d7fa581b6e6648c3752ea"
         },
         {
           "src": "atlas-2x.png",
           "density": 2,
           "sourceCellSize": 96,
-          "sha256": "869c7617cd8375fe924e3d2c5eb7ab4e5be2e9eca042c18a15f54a7283f64c5f"
+          "sha256": "0c6f3377ade142fb4814ee2f866361f6bf9e3772495aa036e3bc1ac360c4b148"
         },
         {
           "src": "atlas-4x.png",
           "density": 4,
           "sourceCellSize": 192,
-          "sha256": "8cc4a22f621dbb3081f7f2bac241d69d550d4aa8a5389d153da9abc866060c9c"
+          "sha256": "63ac52598256b7d21a631e4acab4d42e1478c991375b9947f0ceeb09c2e99983"
         }
       ]
     }
@@ -53,12 +53,12 @@
       "fps": 5,
       "loop": true
     },
-    "boot": {
+    "breathe": {
       "frames": [3, 4, 3, 1],
       "fps": 5,
       "loop": true
     },
-    "standby": {
+    "drowsy": {
       "frames": [4, 5, 4, 1],
       "fps": 5,
       "loop": true
@@ -180,122 +180,122 @@
     },
     "joyful": {
       "frames": [28, 29, 28],
-      "durations": [125, 260, 420],
+      "durations": [130, 265, 430],
       "loop": false
     },
     "delighted": {
       "frames": [29, 30, 29],
-      "durations": [145, 285, 450],
+      "durations": [150, 290, 460],
       "loop": false
     },
     "excited": {
       "frames": [30, 31, 30],
-      "durations": [165, 185, 300],
+      "durations": [170, 190, 310],
       "loop": false
     },
     "proud": {
       "frames": [31, 32, 31],
-      "durations": [185, 210, 330],
+      "durations": [190, 215, 340],
       "loop": false
     },
     "hopeful": {
       "frames": [32, 33, 32],
-      "durations": [125, 235, 360],
+      "durations": [130, 240, 370],
       "loop": false
     },
     "surprised": {
       "frames": [33, 34, 33],
-      "durations": [145, 260, 390],
+      "durations": [150, 265, 400],
       "loop": false
     },
     "startled": {
       "frames": [34, 35, 34],
-      "durations": [165, 285, 420],
+      "durations": [170, 290, 430],
       "loop": false
     },
     "confused": {
       "frames": [35, 36, 35],
-      "durations": [185, 185, 450],
+      "durations": [190, 190, 460],
       "loop": false
     },
     "puzzled": {
       "frames": [36, 37, 36],
-      "durations": [125, 210, 300],
+      "durations": [130, 215, 310],
       "loop": false
     },
     "worried": {
       "frames": [37, 38, 37],
-      "durations": [145, 235, 330],
+      "durations": [150, 240, 340],
       "loop": false
     },
     "anxious": {
       "frames": [38, 39, 38],
-      "durations": [165, 260, 360],
+      "durations": [170, 265, 370],
       "loop": false
     },
     "sad": {
       "frames": [39, 40, 39],
-      "durations": [185, 285, 390],
+      "durations": [190, 290, 400],
       "loop": false
     },
     "disappointed": {
       "frames": [40, 41, 40],
-      "durations": [125, 185, 420],
+      "durations": [130, 190, 430],
       "loop": false
     },
     "lonely": {
       "frames": [41, 42, 41],
-      "durations": [145, 210, 450],
+      "durations": [150, 215, 460],
       "loop": false
     },
     "tired": {
       "frames": [42, 43, 42],
-      "durations": [165, 235, 300],
+      "durations": [170, 240, 310],
       "loop": false
     },
     "annoyed": {
       "frames": [43, 44, 43],
-      "durations": [185, 260, 330],
+      "durations": [190, 265, 340],
       "loop": false
     },
     "angry": {
       "frames": [44, 45, 44],
-      "durations": [125, 285, 360],
+      "durations": [130, 290, 370],
       "loop": false
     },
     "determined": {
       "frames": [45, 46, 45],
-      "durations": [145, 185, 390],
+      "durations": [150, 190, 400],
       "loop": false
     },
     "brave": {
       "frames": [46, 47, 46],
-      "durations": [165, 210, 420],
+      "durations": [170, 215, 430],
       "loop": false
     },
     "shy": {
       "frames": [47, 48, 47],
-      "durations": [185, 235, 450],
+      "durations": [190, 240, 460],
       "loop": false
     },
     "bashful": {
       "frames": [48, 49, 48],
-      "durations": [125, 260, 300],
+      "durations": [130, 265, 310],
       "loop": false
     },
     "mischievous": {
       "frames": [49, 50, 49],
-      "durations": [145, 285, 330],
+      "durations": [150, 290, 340],
       "loop": false
     },
     "playful": {
       "frames": [50, 51, 50],
-      "durations": [165, 185, 360],
+      "durations": [170, 190, 370],
       "loop": false
     },
     "relieved": {
       "frames": [51, 28, 51],
-      "durations": [185, 210, 390],
+      "durations": [190, 215, 400],
       "loop": false
     },
     "hover": {
@@ -305,17 +305,17 @@
     },
     "click": {
       "frames": [53, 54, 53],
-      "durations": [145, 260, 450],
+      "durations": [150, 265, 460],
       "loop": false
     },
     "double-click": {
       "frames": [54, 55, 54],
-      "durations": [165, 285, 300],
+      "durations": [170, 290, 310],
       "loop": false
     },
     "context-click": {
       "frames": [55, 56, 55],
-      "durations": [185, 185, 330],
+      "durations": [190, 190, 340],
       "loop": false
     },
     "press": {
@@ -325,7 +325,7 @@
     },
     "release": {
       "frames": [57, 58, 57],
-      "durations": [145, 235, 390],
+      "durations": [150, 240, 400],
       "loop": false
     },
     "drag": {
@@ -340,7 +340,7 @@
     },
     "drop": {
       "frames": [60, 61, 60],
-      "durations": [125, 185, 300],
+      "durations": [130, 190, 310],
       "loop": false
     },
     "throw:rise": {
@@ -355,27 +355,27 @@
     },
     "land": {
       "frames": [63, 64, 63],
-      "durations": [185, 260, 390],
+      "durations": [190, 265, 400],
       "loop": false
     },
     "greet": {
       "frames": [64, 65, 64],
-      "durations": [125, 285, 420],
+      "durations": [130, 290, 430],
       "loop": false
     },
     "goodbye": {
       "frames": [65, 66, 65],
-      "durations": [145, 185, 450],
+      "durations": [150, 190, 460],
       "loop": false
     },
     "cheer": {
       "frames": [66, 67, 66],
-      "durations": [165, 210, 300],
+      "durations": [170, 215, 310],
       "loop": false
     },
     "applause": {
       "frames": [67, 52, 67],
-      "durations": [185, 235, 330],
+      "durations": [190, 240, 340],
       "loop": false
     },
     "loading": {
@@ -390,27 +390,27 @@
     },
     "success": {
       "frames": [70, 71, 70],
-      "durations": [165, 185, 420],
+      "durations": [170, 190, 430],
       "loop": false
     },
     "error": {
       "frames": [71, 72, 71],
-      "durations": [185, 210, 450],
+      "durations": [190, 215, 460],
       "loop": false
     },
     "notification": {
       "frames": [72, 73, 72],
-      "durations": [125, 235, 300],
+      "durations": [130, 240, 310],
       "loop": false
     },
     "focus": {
       "frames": [73, 74, 73],
-      "durations": [145, 260, 330],
+      "durations": [150, 265, 340],
       "loop": false
     },
     "blur": {
       "frames": [74, 75, 74],
-      "durations": [165, 285, 360],
+      "durations": [170, 290, 370],
       "loop": false
     },
     "page-visible": {
@@ -430,17 +430,17 @@
     },
     "page-resume": {
       "frames": [78, 79, 78],
-      "durations": [165, 260, 300],
+      "durations": [170, 265, 310],
       "loop": false
     },
     "section-enter": {
       "frames": [79, 80, 79],
-      "durations": [185, 285, 330],
+      "durations": [190, 290, 340],
       "loop": false
     },
     "section-leave": {
       "frames": [80, 81, 80],
-      "durations": [125, 185, 360],
+      "durations": [130, 190, 370],
       "loop": false
     },
     "scroll-up": {
@@ -455,7 +455,7 @@
     },
     "resize": {
       "frames": [83, 68, 83],
-      "durations": [185, 260, 450],
+      "durations": [190, 265, 460],
       "loop": false
     },
     "move:N": {
@@ -561,17 +561,17 @@
           {
             "at": 0.24,
             "advance": 0.2,
-            "lift": 0.08
+            "lift": 0.12
           },
           {
             "at": 0.52,
             "advance": 0.58,
-            "lift": 0.14
+            "lift": 0.18
           },
           {
             "at": 0.8,
             "advance": 0.9,
-            "lift": 0.04
+            "lift": 0.05
           },
           {
             "at": 1,

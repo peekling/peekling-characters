@@ -6,7 +6,7 @@ Redistributions of Apache-2.0 material must comply with Section 4 of the Apache 
 
 Each character pack is a separate package boundary with its own license metadata, full `LICENSE`, and applicable `NOTICE`. The package and character manifests must identify the same license. The archive gate verifies these records, the author, every referenced atlas, the thumbnail, and the atlas hashes recorded in `character.json`.
 
-All 28 current official character packs use Apache-2.0. Future community or third-party packs must establish their own valid public license boundary before publication.
+All 30 current official character packs use Apache-2.0. Future community or third-party packs must establish their own valid public license boundary before publication.
 
 The Peekling name, logo, official mascot, and other distinctive brand identity remain reserved unless a specific asset license grants separate rights. See Section 6 of Apache-2.0 for the tooling license's trademark boundary.
 

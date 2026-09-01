@@ -1,6 +1,6 @@
 # `@peekling/pack-x3`
 
-X3 is an independently publishable, data-only character pack for Peekling. Its cyan X and 3 screen-eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion.
+X3 is an independently publishable, data-only character pack for Peekling. Its two cyan LED eyes express 100 named states across rest, gaze, emotion, interaction, lifecycle, and motion without displaying identity text.
 
 ## Install
 

@@ -12,13 +12,13 @@ import {
   createExpressions,
   createManifest,
   createStates,
-  screenEyeSignature,
+  eyeSignature,
 } from "../source/blueprint.mjs";
 import { renderAtlas, renderFrame } from "../source/render.mjs";
 
 const DIRECTIONS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
-test("X3 exposes 100 states across six intentional families", () => {
+test("the catalog contains exactly 100 named states in six intentional groups", () => {
   assert.deepEqual(
     Object.fromEntries(
       Object.entries(STATE_GROUPS).map(([group, names]) => [
@@ -35,26 +35,26 @@ test("X3 exposes 100 states across six intentional families", () => {
       motion: 16,
     },
   );
+
   const names = Object.values(STATE_GROUPS).flat();
   assert.equal(names.length, FRAME_COUNT);
   assert.equal(new Set(names).size, FRAME_COUNT);
+  assert.ok(
+    names.every((name) =>
+      /^[a-z0-9-]+(?::(?:[a-z0-9-]+|N|NE|E|SE|S|SW|W|NW))?$/.test(name),
+    ),
+  );
   assert.equal(COLUMNS * ROWS, FRAME_COUNT);
 });
 
-test("every state keeps two LED screen eyes while giving them a unique performance", () => {
+test("every state owns a genuinely distinct eye performance", () => {
   const expressions = createExpressions();
   assert.equal(expressions.length, FRAME_COUNT);
-  assert.equal(new Set(expressions.map(screenEyeSignature)).size, FRAME_COUNT);
+  assert.equal(new Set(expressions.map(eyeSignature)).size, FRAME_COUNT);
+
   for (const expression of expressions) {
-    assert.equal(
-      expression.mechanics,
-      "body-locked-screen-face",
-      expression.name,
-    );
-    assert.equal(expression.eyes.left.style, "led-capsule", expression.name);
-    assert.equal(expression.eyes.right.style, "led-capsule", expression.name);
-    assert.equal("glyph" in expression.eyes.left, false, expression.name);
-    assert.equal("glyph" in expression.eyes.right, false, expression.name);
+    assert.ok(expression.eyes.left, expression.name);
+    assert.ok(expression.eyes.right, expression.name);
     assert.ok(Number.isFinite(expression.eyes.left.gazeX), expression.name);
     assert.ok(Number.isFinite(expression.eyes.left.gazeY), expression.name);
     assert.ok(Number.isFinite(expression.eyes.right.gazeX), expression.name);
@@ -62,11 +62,12 @@ test("every state keeps two LED screen eyes while giving them a unique performan
   }
 });
 
-test("screen gaze and locomotion cover all eight engine directions", () => {
+test("gaze and locomotion cover all eight engine directions", () => {
   const expressions = createExpressions();
   for (const direction of DIRECTIONS) {
     assert.ok(expressions.some(({ name }) => name === `look:${direction}`));
   }
+
   const manifest = createManifest({
     1: "0".repeat(64),
     2: "0".repeat(64),
@@ -84,45 +85,38 @@ test("screen gaze and locomotion cover all eight engine directions", () => {
   }
 });
 
-test("X3 covers a broad emotional vocabulary through its display", () => {
+test("the emotional range includes positive, vulnerable, alert, and difficult feelings", () => {
   const names = new Set(Object.values(STATE_GROUPS).flat());
   for (const state of [
     "content",
     "joyful",
-    "delighted",
-    "excited",
     "proud",
     "hopeful",
-    "surprised",
-    "startled",
-    "confused",
-    "puzzled",
+    "shy",
     "worried",
     "anxious",
     "sad",
-    "disappointed",
     "lonely",
-    "tired",
     "annoyed",
     "angry",
     "determined",
-    "brave",
-    "shy",
-    "bashful",
+    "surprised",
+    "confused",
     "mischievous",
     "playful",
-    "relieved",
-  ])
+  ]) {
     assert.ok(names.has(state), state);
+  }
 });
 
-test("every state starts on its own signature frame and animates the display", () => {
+test("every state begins on its own signature frame and animates eye movement", () => {
   const states = createStates();
   assert.equal(Object.keys(states).length, FRAME_COUNT);
   assert.equal(
     new Set(Object.values(states).map(({ frames }) => frames[0])).size,
     FRAME_COUNT,
   );
+
   for (const [name, state] of Object.entries(states)) {
     assert.ok(state.frames.length >= 2 && state.frames.length <= 64, name);
     assert.ok(new Set(state.frames).size >= 2, name);
@@ -137,20 +131,24 @@ test("every state starts on its own signature frame and animates the display", (
   }
 });
 
-test("all 100 frames are visible, cyan-faced, transparent, and pixel-distinct at 1x", () => {
+test("all 100 logical frames render visibly and remain pixel-distinct at 1x", () => {
+  const expressions = createExpressions();
   const signatures = new Set();
-  for (const expression of createExpressions()) {
+
+  for (const expression of expressions) {
     const frame = renderFrame(expression, 1);
     assert.equal(frame.width, LOGICAL_CELL_SIZE);
     assert.equal(frame.height, LOGICAL_CELL_SIZE);
-    signatures.add(PNG.sync.write(frame).toString("base64"));
+    const signature = PNG.sync.write(frame).toString("base64");
+    signatures.add(signature);
     assert.ok(
-      countVisiblePixels(frame) > LOGICAL_CELL_SIZE * LOGICAL_CELL_SIZE * 0.2,
+      countVisiblePixels(frame) > LOGICAL_CELL_SIZE * LOGICAL_CELL_SIZE * 0.35,
       expression.name,
     );
-    assert.ok(countCyanPixels(frame) >= 3, expression.name);
+    assert.ok(countDarkEyePixels(frame) > 35, expression.name);
     assert.equal(frame.data[3], 0, `${expression.name} top-left corner`);
   }
+
   assert.equal(signatures.size, FRAME_COUNT);
 });
 
@@ -203,16 +201,13 @@ function countVisiblePixels(png) {
   return count;
 }
 
-function countCyanPixels(png) {
+function countDarkEyePixels(png) {
   let count = 0;
   for (let offset = 0; offset < png.data.length; offset += 4) {
-    if (
-      png.data[offset + 3] > 180 &&
-      png.data[offset + 1] > 125 &&
-      png.data[offset + 2] > 140 &&
-      png.data[offset] < 80
-    )
-      count++;
+    const alpha = png.data[offset + 3];
+    const lightness =
+      png.data[offset] + png.data[offset + 1] + png.data[offset + 2];
+    if (alpha > 200 && lightness < 260) count++;
   }
   return count;
 }

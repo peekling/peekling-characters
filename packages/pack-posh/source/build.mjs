@@ -15,12 +15,12 @@ import {
   VERSION,
   createExpressions,
   createManifest,
-  screenEyeSignature,
+  eyeSignature,
 } from "./blueprint.mjs";
 import { renderAtlas, renderFrame } from "./render.mjs";
 
 const sourceRoot = fileURLToPath(new URL(".", import.meta.url));
-const artifactsRoot = path.resolve(sourceRoot, "../../../artifacts/art/x3");
+const artifactsRoot = path.resolve(sourceRoot, "../../../artifacts/art/posh");
 const outputRoot = path.resolve(
   option("--out") ?? path.join(artifactsRoot, "generated-pack"),
 );
@@ -30,7 +30,7 @@ if (
   path.isAbsolute(relativeOutput) ||
   relativeOutput === ""
 )
-  throw new Error("X3 generated output must stay under artifacts/art/x3");
+  throw new Error("Posh generated output must stay under artifacts/art/posh");
 const outputParent = path.dirname(outputRoot);
 const temporaryRoot = path.join(
   outputParent,
@@ -42,17 +42,16 @@ export async function buildPack() {
   const expressions = createExpressions();
   const atlases = new Map();
   const report = {
-    contract: "peekling-x3-qa-v1",
+    contract: "peekling-posh-qa-v1",
     status: "release-candidate",
     character: CHARACTER_ID,
     frames: FRAME_COUNT,
     cells: COLUMNS * ROWS,
     spareTransparentCells: COLUMNS * ROWS - FRAME_COUNT,
     states: FRAME_COUNT,
-    uniqueScreenEyeSignatures: new Set(expressions.map(screenEyeSignature))
-      .size,
+    uniqueEyeSignatures: new Set(expressions.map(eyeSignature)).size,
     uniqueRenderedFrames1x: 0,
-    displayMechanics: "body-locked-screen-face",
+    displayMechanics: "body-locked-surface-eyes",
     groupCounts: Object.fromEntries(
       Object.entries(STATE_GROUPS).map(([group, names]) => [
         group,
@@ -126,16 +125,16 @@ export async function buildPack() {
   }
 
   await writeFile(
-    path.join(outputParent, "x3-qa.json"),
+    path.join(outputParent, "posh-qa.json"),
     `${JSON.stringify(report, null, 2)}\n`,
   );
   await writeFile(
-    path.join(outputParent, "x3-state-sheet.png"),
+    path.join(outputParent, "posh-state-sheet.png"),
     encode(stateSheet),
   );
   await writeFile(
-    path.join(outputParent, "x3-screen-state-map.md"),
-    screenStateMap(expressions),
+    path.join(outputParent, "posh-eye-state-map.md"),
+    eyeStateMap(expressions),
   );
   return { outputRoot, report };
 }
@@ -232,13 +231,13 @@ function drawNumber(image, value, left, top, red, green, blue) {
     });
 }
 
-function screenStateMap(expressions) {
+function eyeStateMap(expressions) {
   const lines = [
-    "# X3 screen-state map",
+    "# Posh eye-state map",
     "",
-    "Every state begins on the numbered signature frame shown in `x3-state-sheet.png`. The monitor body stays coherent while its cyan LED eyes perform the expression.",
+    "Every state begins on the numbered signature frame shown in `posh-state-sheet.png`. The pearl-white orb stays coherent while its navy eyes perform the expression.",
     "",
-    "| # | State | Family | Gaze | LED-eye treatment |",
+    "| # | State | Family | Gaze | Eye shape and highlight |",
     "|---:|---|---|---|---|",
   ];
   for (const expression of expressions) {
@@ -246,7 +245,7 @@ function screenStateMap(expressions) {
     const right = expression.eyes.right;
     const gazeX = ((left.gazeX + right.gazeX) / 2).toFixed(1);
     const gazeY = ((left.gazeY + right.gazeY) / 2).toFixed(1);
-    const treatment = `${left.scaleX.toFixed(2)}x${left.scaleY.toFixed(2)} / ${right.scaleX.toFixed(2)}x${right.scaleY.toFixed(2)}, ${left.spark}, glitch ${left.glitch}`;
+    const treatment = `${left.width.toFixed(1)}x${left.height.toFixed(1)} / ${right.width.toFixed(1)}x${right.height.toFixed(1)}, ${left.highlight}`;
     lines.push(
       `| ${expression.index + 1} | \`${expression.name}\` | ${expression.group} | ${gazeX}, ${gazeY} | ${treatment} |`,
     );
@@ -256,10 +255,10 @@ function screenStateMap(expressions) {
 
 function packageManifest() {
   return {
-    name: "@peekling/pack-x3",
+    name: "@peekling/pack-posh",
     version: VERSION,
     description:
-      "Retro terminal Peekling character pack with 100 expressive cyan LED-eye states",
+      "Pearl-white orb Peekling character pack with 100 expressive eye-driven states",
     license: LICENSE_ID,
     author: {
       name: "Prajwal S. Venkateshmurthy",
@@ -279,7 +278,7 @@ function packageManifest() {
 }
 
 function packReadme() {
-  return `# \`@peekling/pack-x3\`\n\nX3 is a data-only Peekling character pack. A compact retro terminal acts as the body, while two cyan LED eyes express one hundred named states without displaying text.\n\nThe pack contains independent 48, 96, and 192px atlas densities with a default scale equivalent to 64 logical pixels. Every state begins on its own signature frame and every animation moves between at least two distinct display performances.\n`;
+  return `# \`@peekling/pack-posh\`\n\nPosh is a data-only Peekling character pack. Its pearl-white orb body has no mouth or limbs, so one hundred named states communicate through gaze, eye shape, eyelids, highlights, squash, lift, and tilt.\n\nThe pack contains independent 48, 96, and 192px atlas densities with a default scale equivalent to 64 logical pixels. Every state begins on its own signature frame and every animation moves between at least two distinct eye performances.\n`;
 }
 
 function licenseText() {
@@ -287,7 +286,7 @@ function licenseText() {
 }
 
 function noticeText() {
-  return `X3 Character Pack\nCopyright 2026 Prajwal S. Venkateshmurthy\n\nOriginal design and development of X3 by Prajwal S. Venkateshmurthy.\nContact: https://prajwal.me\nProject: https://peekling.com/\n`;
+  return `Posh Character Pack\nCopyright 2026 Prajwal S. Venkateshmurthy\n\nOriginal design and development of Posh by Prajwal S. Venkateshmurthy.\nContact: https://prajwal.me\nProject: https://peekling.com/\n`;
 }
 
 function encode(png) {
@@ -335,6 +334,6 @@ if (
 ) {
   const result = await buildPack();
   console.log(
-    `Built ${FRAME_COUNT} X3 states at 1x, 2x, and 4x in ${result.outputRoot}`,
+    `Built ${FRAME_COUNT} Posh states at 1x, 2x, and 4x in ${result.outputRoot}`,
   );
 }

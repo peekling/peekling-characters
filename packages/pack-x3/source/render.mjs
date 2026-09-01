@@ -160,36 +160,28 @@ function sampleScreenEyes(expression, x, y) {
     const halfHeight = 7.4;
     if (scaledY < -halfHeight + eye.lidTop * halfHeight * 2) continue;
     if (scaledY > halfHeight - eye.lidBottom * halfHeight * 2) continue;
-    if (glyphPixel(eye, scaledX, scaledY)) return glyphColor(eye, scaledY);
+    if (ledEyePixel(eye, scaledX, scaledY)) return ledEyeColor(eye, scaledY);
     if (sparkPixel(eye, scaledX, scaledY)) return sparkColor(eye.spark);
   }
   return null;
 }
 
-function glyphPixel(eye, x, y) {
+function ledEyePixel(eye, x, y) {
   const scanPitch = 1.72;
   const phase = eye.scanPhase * scanPitch;
   const scanPosition = (((y + 8 + phase) % scanPitch) + scanPitch) % scanPitch;
   const gap = Math.min(0.7, eye.scanGap * 0.9);
   if (scanPosition < gap) return false;
 
-  let segment;
-  if (eye.glyph === "X") {
-    segment = Math.min(
-      distanceToSegment(x, y, -4.3, -6.8, 4.3, 6.8),
-      distanceToSegment(x, y, 4.3, -6.8, -4.3, 6.8),
-    );
-  } else {
-    segment = Math.min(
-      distanceToSegment(x, y, -3.8, -6.6, 2.6, -6.6),
-      distanceToSegment(x, y, 2.6, -6.6, 4.1, -5.1),
-      distanceToSegment(x, y, 4.1, -5.1, 4.1, -1),
-      distanceToSegment(x, y, -1.4, 0, 3.6, 0),
-      distanceToSegment(x, y, 4.1, 1, 4.1, 5.1),
-      distanceToSegment(x, y, 4.1, 5.1, 2.6, 6.6),
-      distanceToSegment(x, y, -3.8, 6.6, 2.6, 6.6),
-    );
-  }
+  const eyeDistance = roundedRectSdf(
+    x,
+    y,
+    0,
+    0,
+    3.15 + Math.max(-0.2, eye.stroke - 1.15) * 0.24,
+    6.65,
+    2.45,
+  );
 
   const missingBand =
     eye.glitch > 0 &&
@@ -197,7 +189,7 @@ function glyphPixel(eye, x, y) {
       (7 - Math.min(3, eye.glitch)) ===
       0;
   if (missingBand && x < -0.3 + eye.glitch * 0.35) return false;
-  return segment <= eye.stroke;
+  return eyeDistance <= 0;
 }
 
 function sparkPixel(eye, x, y) {
@@ -245,7 +237,7 @@ function sparkPixel(eye, x, y) {
   }
 }
 
-function glyphColor(eye, y) {
+function ledEyeColor(eye, y) {
   const brightness = Math.max(0.7, eye.brightness);
   const lower = clamp01((y + 7) / 14);
   const base = eye.spark === "hot" ? [10, 188, 203] : [3, 202, 224];
@@ -280,14 +272,6 @@ function heart(x, y) {
     Math.hypot(x + 0.45, y + 0.25) < 0.58;
   const lower = y > 0.1 && y < 1.45 && Math.abs(x) < 1.15 - y * 0.6;
   return upper || lower;
-}
-
-function distanceToSegment(px, py, ax, ay, bx, by) {
-  const abx = bx - ax;
-  const aby = by - ay;
-  const lengthSquared = abx * abx + aby * aby;
-  const t = clamp01(((px - ax) * abx + (py - ay) * aby) / lengthSquared);
-  return Math.hypot(px - (ax + abx * t), py - (ay + aby * t));
 }
 
 function roundedRectSdf(x, y, centerX, centerY, halfWidth, halfHeight, radius) {

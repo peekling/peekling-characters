@@ -1,7 +1,7 @@
 {
-  "name": "@peekling/pack-x3",
+  "name": "@peekling/pack-posh",
   "version": "0.1.0",
-  "description": "Retro terminal Peekling character pack with 100 expressive cyan LED-eye states",
+  "description": "Pearl-white orb Peekling character pack with 100 expressive eye-driven states",
   "license": "Apache-2.0",
   "author": {
     "name": "Prajwal S. Venkateshmurthy",
@@ -18,7 +18,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "node source/build.mjs && node --test test/*.test.mjs && node ../../scripts/qa-character-pack.mjs x3",
+    "build": "node source/build.mjs && node --test test/*.test.mjs && node ../../scripts/qa-character-pack.mjs posh",
     "test": "node --test test/*.test.mjs"
   },
   "publishConfig": {
@@ -27,7 +27,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/peekling/peekling-characters.git",
-    "directory": "packages/pack-x3"
+    "directory": "packages/pack-posh"
   },
   "bugs": {
     "url": "https://github.com/peekling/peekling-characters/issues"
