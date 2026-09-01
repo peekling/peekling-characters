@@ -89,7 +89,7 @@ test("the emotional range includes positive, vulnerable, alert, and difficult fe
   const names = new Set(Object.values(STATE_GROUPS).flat());
   for (const state of [
     "content",
-    "joyful",
+    "happy",
     "proud",
     "hopeful",
     "shy",
@@ -107,6 +107,19 @@ test("the emotional range includes positive, vulnerable, alert, and difficult fe
   ]) {
     assert.ok(names.has(state), state);
   }
+});
+
+test("Posh exposes the canonical states used by engine interactions and website Plans", () => {
+  const names = new Set(Object.values(STATE_GROUPS).flat());
+  for (const state of [
+    "idle",
+    "happy",
+    "scroll",
+    "scroll:fly",
+    "scroll:fall",
+    "music:headphones",
+  ])
+    assert.ok(names.has(state), `missing canonical state ${state}`);
 });
 
 test("every state begins on its own signature frame and animates eye movement", () => {

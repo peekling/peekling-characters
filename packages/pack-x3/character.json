@@ -178,7 +178,7 @@
       "fps": 5,
       "loop": true
     },
-    "joyful": {
+    "happy": {
       "frames": [28, 29, 28],
       "durations": [125, 260, 420],
       "loop": false
@@ -343,12 +343,12 @@
       "durations": [125, 185, 300],
       "loop": false
     },
-    "throw:rise": {
+    "scroll:fly": {
       "frames": [61, 62, 61, 1],
       "fps": 5,
       "loop": true
     },
-    "throw:fall": {
+    "scroll:fall": {
       "frames": [62, 63, 62, 1],
       "fps": 5,
       "loop": true
@@ -373,7 +373,7 @@
       "durations": [165, 210, 300],
       "loop": false
     },
-    "applause": {
+    "music:headphones": {
       "frames": [67, 52, 67],
       "durations": [185, 235, 330],
       "loop": false
@@ -443,7 +443,7 @@
       "durations": [125, 185, 360],
       "loop": false
     },
-    "scroll-up": {
+    "scroll": {
       "frames": [81, 82, 81, 1],
       "fps": 5,
       "loop": true

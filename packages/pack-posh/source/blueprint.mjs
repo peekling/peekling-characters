@@ -41,7 +41,7 @@ export const STATE_GROUPS = Object.freeze({
     "far-focus",
   ]),
   emotion: Object.freeze([
-    "joyful",
+    "happy",
     "delighted",
     "excited",
     "proud",
@@ -76,13 +76,13 @@ export const STATE_GROUPS = Object.freeze({
     "drag",
     "drag-hover",
     "drop",
-    "throw:rise",
-    "throw:fall",
+    "scroll:fly",
+    "scroll:fall",
     "land",
     "greet",
     "goodbye",
     "cheer",
-    "applause",
+    "music:headphones",
   ]),
   lifecycle: Object.freeze([
     "loading",
@@ -98,7 +98,7 @@ export const STATE_GROUPS = Object.freeze({
     "page-resume",
     "section-enter",
     "section-leave",
-    "scroll-up",
+    "scroll",
     "scroll-down",
     "resize",
   ]),
@@ -334,7 +334,7 @@ const RECIPES = {
     { lift: 0.5 },
   ),
 
-  joyful: pose(
+  happy: pose(
     {
       gazeY: -0.8,
       width: 9.2,
@@ -579,13 +579,13 @@ const RECIPES = {
     { tilt: 4 },
     { squash: -0.05, lift: 1.5 },
   ),
-  "throw:rise": pose(
+  "scroll:fly": pose(
     { gazeY: -5, width: 7.5, height: 17.1, highlight: "star" },
     { tilt: -7 },
     { tilt: 7 },
     { lift: 2.7, squash: -0.07 },
   ),
-  "throw:fall": pose(
+  "scroll:fall": pose(
     { gazeY: 5, width: 9.6, height: 18.8, highlight: "ring" },
     { tilt: 7 },
     { tilt: -7 },
@@ -621,7 +621,7 @@ const RECIPES = {
     { tilt: 11 },
     { lift: 2, squash: -0.05, glow: 0.18 },
   ),
-  applause: pose(
+  "music:headphones": pose(
     {
       gazeX: 0.8,
       gazeY: -0.4,
@@ -720,7 +720,7 @@ const RECIPES = {
     { tilt: 10 },
     { tilt: 6, lift: -0.4 },
   ),
-  "scroll-up": pose(
+  scroll: pose(
     { gazeY: -4.8, width: 7.7, height: 13.5, highlight: "bar" },
     { tilt: -5 },
     { tilt: 5 },
@@ -868,14 +868,14 @@ export function createStates() {
     "press",
     "drag",
     "drag-hover",
-    "throw:rise",
-    "throw:fall",
+    "scroll:fly",
+    "scroll:fall",
     "loading",
     "waiting",
     "page-visible",
     "page-hidden",
     "page-freeze",
-    "scroll-up",
+    "scroll",
     "scroll-down",
     ...STATE_GROUPS.motion,
   ]);

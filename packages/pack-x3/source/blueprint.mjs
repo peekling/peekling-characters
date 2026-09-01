@@ -41,7 +41,7 @@ export const STATE_GROUPS = Object.freeze({
     "far-focus",
   ]),
   emotion: Object.freeze([
-    "joyful",
+    "happy",
     "delighted",
     "excited",
     "proud",
@@ -76,13 +76,13 @@ export const STATE_GROUPS = Object.freeze({
     "drag",
     "drag-hover",
     "drop",
-    "throw:rise",
-    "throw:fall",
+    "scroll:fly",
+    "scroll:fall",
     "land",
     "greet",
     "goodbye",
     "cheer",
-    "applause",
+    "music:headphones",
   ]),
   lifecycle: Object.freeze([
     "loading",
@@ -98,7 +98,7 @@ export const STATE_GROUPS = Object.freeze({
     "page-resume",
     "section-enter",
     "section-leave",
-    "scroll-up",
+    "scroll",
     "scroll-down",
     "resize",
   ]),
@@ -397,7 +397,7 @@ const RECIPES = {
     { screenGlow: 0.04 },
   ),
 
-  joyful: pose(
+  happy: pose(
     {
       gazeY: -0.8,
       scaleX: 1.18,
@@ -781,13 +781,13 @@ const RECIPES = {
     { tilt: 4 },
     { squash: -0.045, lift: 1.3 },
   ),
-  "throw:rise": pose(
+  "scroll:fly": pose(
     { gazeY: -5.2, scaleX: 0.94, scaleY: 1.1, brightness: 1.15, spark: "star" },
     { tilt: -7 },
     { tilt: 7 },
     { lift: 3.6, squash: -0.11 },
   ),
-  "throw:fall": pose(
+  "scroll:fall": pose(
     { gazeY: 5.2, scaleX: 1.22, scaleY: 1.22, glitch: 1, spark: "ring" },
     { tilt: 7 },
     { tilt: -7 },
@@ -824,7 +824,7 @@ const RECIPES = {
     { tilt: 11 },
     { lift: 2.8, squash: -0.09, screenGlow: 0.36 },
   ),
-  applause: pose(
+  "music:headphones": pose(
     {
       gazeX: 0.8,
       gazeY: -0.4,
@@ -983,7 +983,7 @@ const RECIPES = {
     { tilt: 10 },
     { tilt: 6, lift: -0.3 },
   ),
-  "scroll-up": pose(
+  scroll: pose(
     { gazeY: -5, scaleX: 0.96, scaleY: 0.86, scanGap: 0.4, spark: "cursor" },
     { tilt: -5 },
     { tilt: 5 },
@@ -1152,14 +1152,14 @@ export function createStates() {
     "press",
     "drag",
     "drag-hover",
-    "throw:rise",
-    "throw:fall",
+    "scroll:fly",
+    "scroll:fall",
     "loading",
     "waiting",
     "page-visible",
     "page-hidden",
     "page-freeze",
-    "scroll-up",
+    "scroll",
     "scroll-down",
     ...STATE_GROUPS.motion,
   ]);

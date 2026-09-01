@@ -88,7 +88,7 @@ test("X3 covers a broad emotional vocabulary through its display", () => {
   const names = new Set(Object.values(STATE_GROUPS).flat());
   for (const state of [
     "content",
-    "joyful",
+    "happy",
     "delighted",
     "excited",
     "proud",
@@ -114,6 +114,19 @@ test("X3 covers a broad emotional vocabulary through its display", () => {
     "relieved",
   ])
     assert.ok(names.has(state), state);
+});
+
+test("X3 exposes the canonical states used by engine interactions and website Plans", () => {
+  const names = new Set(Object.values(STATE_GROUPS).flat());
+  for (const state of [
+    "idle",
+    "happy",
+    "scroll",
+    "scroll:fly",
+    "scroll:fall",
+    "music:headphones",
+  ])
+    assert.ok(names.has(state), `missing canonical state ${state}`);
 });
 
 test("every state starts on its own signature frame and animates the display", () => {
