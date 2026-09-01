@@ -5,7 +5,7 @@ X3 is an independently publishable, data-only character pack for Peekling. Its t
 ## Install
 
 ```sh
-npm install @peekling/pack-x3@0.1.0
+npm install @peekling/pack-x3@0.1.1
 ```
 
 The package contains `character.json`, its referenced atlases, `thumbnail.png`, and the applicable public legal records. Atlas hashes are recorded in `character.json`. Development scripts, source material, and tests stay in this monorepo and are not published.

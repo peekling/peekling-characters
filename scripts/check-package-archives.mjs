@@ -20,6 +20,8 @@ const required = [
 ];
 const failures = [];
 const repositoryLicense = await readFile("LICENSE", "utf8");
+const semverPattern =
+  /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/;
 
 if (archives.length !== 30)
   failures.push(`expected 30 package dry-runs, received ${archives.length}`);
@@ -44,8 +46,13 @@ for (const archive of archives) {
   const license = await readFile(path.join(directory, "LICENSE"), "utf8");
   if (!archive.name.startsWith("@peekling/pack-"))
     failures.push(`${archive.name} lacks an independent pack identity`);
-  if (archive.version !== "0.1.0")
-    failures.push(`${archive.name} changed its release version`);
+  if (!semverPattern.test(archive.version))
+    failures.push(`${archive.name} has an invalid release version`);
+  if (
+    archive.version !== packageManifest.version ||
+    archive.version !== characterManifest.version
+  )
+    failures.push(`${archive.name} has inconsistent release versions`);
   if (packageManifest.private === true)
     failures.push(`${archive.name} remains private`);
   if (

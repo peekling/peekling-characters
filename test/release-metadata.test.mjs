@@ -50,6 +50,7 @@ test("all official packs expose the independent release boundary", async () => {
     });
     assert.deepEqual(packageManifest.publishConfig, { access: "public" });
     assert.equal(manifest.name, id);
+    assert.equal(manifest.version, packageManifest.version);
     assert.equal(manifest.license, "Apache-2.0");
     assert.equal(manifest.metadata.author, author);
     assert.equal(license, repositoryLicense);
@@ -57,7 +58,9 @@ test("all official packs expose the independent release boundary", async () => {
     assert.match(notice, /Contact: https:\/\/prajwal\.me/);
     assert.match(
       readme,
-      new RegExp(`npm install @peekling/pack-${id}@0\\.1\\.0`),
+      new RegExp(
+        `npm install @peekling/pack-${id}@${packageManifest.version.replaceAll(".", "\\.")}`,
+      ),
     );
     assert.doesNotMatch(
       `${notice}\n${readme}`,
