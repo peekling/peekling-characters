@@ -26,38 +26,39 @@ The manifest records safe relative image paths and SHA-256 hashes for every atla
 This table is generated from the current package metadata and the live npm registry. Published rows link to their verified npm version. Packs that are still source-only stay visible with an explicit `(unreleased)` label and no npm link.
 
 <!-- PACK_ROSTER_START -->
-25 character packs are published and installable from npm. 3 packs are shown as unreleased for future follow-up.
+28 character packs are published and installable from npm. 1 pack is shown as unreleased for future follow-up.
 
 | Preview | Character | Description | Version | Package |
 | :---: | --- | --- | --- | --- |
-| ![Bramble](packages/pack-bramble/thumbnail.png) | [Bramble](packages/pack-bramble) | A warm forest bear with a slow, reassuring lumber. | `0.1.0` | [`@peekling/pack-bramble`](https://www.npmjs.com/package/@peekling/pack-bramble/v/0.1.0) |
-| ![Buns](packages/pack-buns/thumbnail.png) | [Buns](packages/pack-buns) | A round burger buddy who rolls forward and settles softly. | `0.1.0` | [`@peekling/pack-buns`](https://www.npmjs.com/package/@peekling/pack-buns/v/0.1.0) |
-| ![Byte](packages/pack-byte/thumbnail.png) | [Byte](packages/pack-byte) | A quick cyber cat with a bright visor and quiet paws. | `0.1.0` | [`@peekling/pack-byte`](https://www.npmjs.com/package/@peekling/pack-byte/v/0.1.0) |
-| ![Crumb](packages/pack-crumb/thumbnail.png) | [Crumb](packages/pack-crumb) | A toast-sized friend who skips without dropping a crumb. | `0.1.0` | [`@peekling/pack-crumb`](https://www.npmjs.com/package/@peekling/pack-crumb/v/0.1.0) |
-| ![Ember](packages/pack-ember/thumbnail.png) | [Ember](packages/pack-ember) | A rust-red forest friend with a bright, adventurous streak. | `0.1.0` | [`@peekling/pack-ember`](https://www.npmjs.com/package/@peekling/pack-ember/v/0.1.0) |
-| ![Fable](packages/pack-fable/thumbnail.png) | [Fable](packages/pack-fable) | A clever terracotta fox always ready for the next trail. | `0.1.0` | [`@peekling/pack-fable`](https://www.npmjs.com/package/@peekling/pack-fable/v/0.1.0) |
-| ![Glint](packages/pack-glint/thumbnail.png) | [Glint](packages/pack-glint) | A glowing elemental wisp drifting wherever wonder leads. | `0.1.0` | [`@peekling/pack-glint`](https://www.npmjs.com/package/@peekling/pack-glint/v/0.1.0) |
-| ![Halo](packages/pack-halo/thumbnail.png) | [Halo](packages/pack-halo) | A tiny ringed planet rolling through its own bright orbit. | `0.1.0` | [`@peekling/pack-halo`](https://www.npmjs.com/package/@peekling/pack-halo/v/0.1.0) |
-| ![Luna](packages/pack-luna/thumbnail.png) | [Luna](packages/pack-luna) | A dreamy moon friend tracing a quiet little orbit. | `0.1.0` | [`@peekling/pack-luna`](https://www.npmjs.com/package/@peekling/pack-luna/v/0.1.0) |
-| ![Mochi](packages/pack-mochi/thumbnail.png) | [Mochi](packages/pack-mochi) | A lavender-eared bunny with soft, springy steps. | `0.1.0` | [`@peekling/pack-mochi`](https://www.npmjs.com/package/@peekling/pack-mochi/v/0.1.0) |
-| ![Moss](packages/pack-moss/thumbnail.png) | [Moss](packages/pack-moss) | A mint-green frog who crosses the page in cheerful hops. | `0.1.0` | [`@peekling/pack-moss`](https://www.npmjs.com/package/@peekling/pack-moss/v/0.1.0) |
-| ![Nib](packages/pack-nib/thumbnail.png) | [Nib](packages/pack-nib) | A curious mole who burrows, scoots, and pops up smiling. | `0.1.0` | [`@peekling/pack-nib`](https://www.npmjs.com/package/@peekling/pack-nib/v/0.1.0) |
-| ![Nori](packages/pack-nori/thumbnail.png) | [Nori](packages/pack-nori) | A cozy sushi friend with a gentle rice-body shuffle. | `0.1.0` | [`@peekling/pack-nori`](https://www.npmjs.com/package/@peekling/pack-nori/v/0.1.0) |
-| ![Nova](packages/pack-nova/thumbnail.png) | [Nova](packages/pack-nova) | A cosmic creature who phases gently between little worlds. | `0.1.0` | [`@peekling/pack-nova`](https://www.npmjs.com/package/@peekling/pack-nova/v/0.1.0) |
-| ![Orbit](packages/pack-orbit/thumbnail.png) | [Orbit](packages/pack-orbit) | A round little robot with a cool display and precise tiny steps. | `0.1.0` | [`@peekling/pack-orbit`](https://www.npmjs.com/package/@peekling/pack-orbit/v/0.1.0) |
-| ![Peek](packages/pack-peek/thumbnail.png) | [Peek](packages/pack-peek) | A curious kitten-fox who follows pointers and celebrates small wins. | `0.1.0` | [`@peekling/pack-peek`](https://www.npmjs.com/package/@peekling/pack-peek/v/0.1.0) |
-| ![Pip](packages/pack-pip/thumbnail.png) | [Pip](packages/pack-pip) | A warm-gold corgi who trots into every little celebration. | `0.1.0` | [`@peekling/pack-pip`](https://www.npmjs.com/package/@peekling/pack-pip/v/0.1.0) |
-| ![Purl](packages/pack-purl/thumbnail.png) | [Purl](packages/pack-purl) | A woolly lamb who bounds forward on cloud-soft feet. | `0.1.0` | [`@peekling/pack-purl`](https://www.npmjs.com/package/@peekling/pack-purl/v/0.1.0) |
-| ![Quill](packages/pack-quill/thumbnail.png) | [Quill](packages/pack-quill) | A thoughtful scholar owl who flutters between bright ideas. | `0.1.0` | [`@peekling/pack-quill`](https://www.npmjs.com/package/@peekling/pack-quill/v/0.1.0) |
-| ![Rivet](packages/pack-rivet/thumbnail.png) | [Rivet](packages/pack-rivet) | A clockwork beetle who trundles along with careful purpose. | `0.1.0` | [`@peekling/pack-rivet`](https://www.npmjs.com/package/@peekling/pack-rivet/v/0.1.0) |
-| ![Rook](packages/pack-rook/thumbnail.png) | [Rook](packages/pack-rook) | A curious raccoon who tiptoes toward every shiny surprise. | `0.1.0` | [`@peekling/pack-rook`](https://www.npmjs.com/package/@peekling/pack-rook/v/0.1.0) |
-| ![Sol](packages/pack-sol/thumbnail.png) | [Sol](packages/pack-sol) | A sunny companion who floats with a warm, radiant pulse. | `0.1.0` | [`@peekling/pack-sol`](https://www.npmjs.com/package/@peekling/pack-sol/v/0.1.0) |
-| ![Terra](packages/pack-terra/thumbnail.png) | [Terra](packages/pack-terra) | A pocket-sized Earth gliding with a calm, steady spin. | `0.1.0` | [`@peekling/pack-terra`](https://www.npmjs.com/package/@peekling/pack-terra/v/0.1.0) |
-| ![Tico](packages/pack-tico/thumbnail.png) | [Tico](packages/pack-tico) | A bright taco friend quick-stepping without spilling a thing. | `0.1.0` | [`@peekling/pack-tico`](https://www.npmjs.com/package/@peekling/pack-tico/v/0.1.0) |
-| ![Tumble](packages/pack-tumble/thumbnail.png) | [Tumble](packages/pack-tumble) | A cheerful cactus wanderer with a tiny western swagger. | `0.1.0` | [`@peekling/pack-tumble`](https://www.npmjs.com/package/@peekling/pack-tumble/v/0.1.0) |
-| ![Vali](packages/pack-vali/thumbnail.png) | [Vali](packages/pack-vali) | A brave little slime whose bouncy courage fills the room. | `0.1.0` (unreleased) | `@peekling/pack-vali` (unreleased) |
-| ![Waddle](packages/pack-waddle/thumbnail.png) | [Waddle](packages/pack-waddle) | A scarf-wrapped penguin with a gentle side-to-side waddle. | `0.1.0` (unreleased) | `@peekling/pack-waddle` (unreleased) |
-| ![Zesty](packages/pack-zesty/thumbnail.png) | [Zesty](packages/pack-zesty) | A lively pizza slice who scoots with a confident tilt. | `0.1.0` (unreleased) | `@peekling/pack-zesty` (unreleased) |
+| ![Bramble](packages/pack-bramble/thumbnail.png) | [Bramble](packages/pack-bramble) | A warm forest bear with a slow, reassuring lumber. | `0.1.1` | [`@peekling/pack-bramble`](https://www.npmjs.com/package/@peekling/pack-bramble/v/0.1.1) |
+| ![Buns](packages/pack-buns/thumbnail.png) | [Buns](packages/pack-buns) | A round burger buddy who rolls forward and settles softly. | `0.1.1` | [`@peekling/pack-buns`](https://www.npmjs.com/package/@peekling/pack-buns/v/0.1.1) |
+| ![Byte](packages/pack-byte/thumbnail.png) | [Byte](packages/pack-byte) | A quick cyber cat with a bright visor and quiet paws. | `0.1.1` | [`@peekling/pack-byte`](https://www.npmjs.com/package/@peekling/pack-byte/v/0.1.1) |
+| ![Crumb](packages/pack-crumb/thumbnail.png) | [Crumb](packages/pack-crumb) | A toast-sized friend who skips without dropping a crumb. | `0.1.1` | [`@peekling/pack-crumb`](https://www.npmjs.com/package/@peekling/pack-crumb/v/0.1.1) |
+| ![Ember](packages/pack-ember/thumbnail.png) | [Ember](packages/pack-ember) | A rust-red forest friend with a bright, adventurous streak. | `0.1.1` | [`@peekling/pack-ember`](https://www.npmjs.com/package/@peekling/pack-ember/v/0.1.1) |
+| ![Fable](packages/pack-fable/thumbnail.png) | [Fable](packages/pack-fable) | A clever terracotta fox always ready for the next trail. | `0.1.1` | [`@peekling/pack-fable`](https://www.npmjs.com/package/@peekling/pack-fable/v/0.1.1) |
+| ![Glint](packages/pack-glint/thumbnail.png) | [Glint](packages/pack-glint) | A glowing elemental wisp drifting wherever wonder leads. | `0.1.1` | [`@peekling/pack-glint`](https://www.npmjs.com/package/@peekling/pack-glint/v/0.1.1) |
+| ![Halo](packages/pack-halo/thumbnail.png) | [Halo](packages/pack-halo) | A tiny ringed planet rolling through its own bright orbit. | `0.1.1` | [`@peekling/pack-halo`](https://www.npmjs.com/package/@peekling/pack-halo/v/0.1.1) |
+| ![Luna](packages/pack-luna/thumbnail.png) | [Luna](packages/pack-luna) | A dreamy moon friend tracing a quiet little orbit. | `0.1.1` | [`@peekling/pack-luna`](https://www.npmjs.com/package/@peekling/pack-luna/v/0.1.1) |
+| ![Mochi](packages/pack-mochi/thumbnail.png) | [Mochi](packages/pack-mochi) | A lavender-eared bunny with soft, springy steps. | `0.1.1` | [`@peekling/pack-mochi`](https://www.npmjs.com/package/@peekling/pack-mochi/v/0.1.1) |
+| ![Moss](packages/pack-moss/thumbnail.png) | [Moss](packages/pack-moss) | A mint-green frog who crosses the page in cheerful hops. | `0.1.1` | [`@peekling/pack-moss`](https://www.npmjs.com/package/@peekling/pack-moss/v/0.1.1) |
+| ![Nib](packages/pack-nib/thumbnail.png) | [Nib](packages/pack-nib) | A curious mole who burrows, scoots, and pops up smiling. | `0.1.1` | [`@peekling/pack-nib`](https://www.npmjs.com/package/@peekling/pack-nib/v/0.1.1) |
+| ![Nori](packages/pack-nori/thumbnail.png) | [Nori](packages/pack-nori) | A cozy sushi friend with a gentle rice-body shuffle. | `0.1.1` | [`@peekling/pack-nori`](https://www.npmjs.com/package/@peekling/pack-nori/v/0.1.1) |
+| ![Nova](packages/pack-nova/thumbnail.png) | [Nova](packages/pack-nova) | A cosmic creature who phases gently between little worlds. | `0.1.1` | [`@peekling/pack-nova`](https://www.npmjs.com/package/@peekling/pack-nova/v/0.1.1) |
+| ![Orbit](packages/pack-orbit/thumbnail.png) | [Orbit](packages/pack-orbit) | A round little robot with a cool display and precise tiny steps. | `0.1.1` | [`@peekling/pack-orbit`](https://www.npmjs.com/package/@peekling/pack-orbit/v/0.1.1) |
+| ![Peek](packages/pack-peek/thumbnail.png) | [Peek](packages/pack-peek) | A curious kitten-fox who follows pointers and celebrates small wins. | `0.1.1` | [`@peekling/pack-peek`](https://www.npmjs.com/package/@peekling/pack-peek/v/0.1.1) |
+| ![Pip](packages/pack-pip/thumbnail.png) | [Pip](packages/pack-pip) | A warm-gold corgi who trots into every little celebration. | `0.1.1` | [`@peekling/pack-pip`](https://www.npmjs.com/package/@peekling/pack-pip/v/0.1.1) |
+| ![Purl](packages/pack-purl/thumbnail.png) | [Purl](packages/pack-purl) | A woolly lamb who bounds forward on cloud-soft feet. | `0.1.1` | [`@peekling/pack-purl`](https://www.npmjs.com/package/@peekling/pack-purl/v/0.1.1) |
+| ![Quill](packages/pack-quill/thumbnail.png) | [Quill](packages/pack-quill) | A thoughtful scholar owl who flutters between bright ideas. | `0.1.1` | [`@peekling/pack-quill`](https://www.npmjs.com/package/@peekling/pack-quill/v/0.1.1) |
+| ![Rivet](packages/pack-rivet/thumbnail.png) | [Rivet](packages/pack-rivet) | A clockwork beetle who trundles along with careful purpose. | `0.1.1` | [`@peekling/pack-rivet`](https://www.npmjs.com/package/@peekling/pack-rivet/v/0.1.1) |
+| ![Rook](packages/pack-rook/thumbnail.png) | [Rook](packages/pack-rook) | A curious raccoon who tiptoes toward every shiny surprise. | `0.1.1` | [`@peekling/pack-rook`](https://www.npmjs.com/package/@peekling/pack-rook/v/0.1.1) |
+| ![Sol](packages/pack-sol/thumbnail.png) | [Sol](packages/pack-sol) | A sunny companion who floats with a warm, radiant pulse. | `0.1.1` | [`@peekling/pack-sol`](https://www.npmjs.com/package/@peekling/pack-sol/v/0.1.1) |
+| ![Terra](packages/pack-terra/thumbnail.png) | [Terra](packages/pack-terra) | A pocket-sized Earth gliding with a calm, steady spin. | `0.1.1` | [`@peekling/pack-terra`](https://www.npmjs.com/package/@peekling/pack-terra/v/0.1.1) |
+| ![Tico](packages/pack-tico/thumbnail.png) | [Tico](packages/pack-tico) | A bright taco friend quick-stepping without spilling a thing. | `0.1.1` | [`@peekling/pack-tico`](https://www.npmjs.com/package/@peekling/pack-tico/v/0.1.1) |
+| ![Tumble](packages/pack-tumble/thumbnail.png) | [Tumble](packages/pack-tumble) | A cheerful cactus wanderer with a tiny western swagger. | `0.1.1` | [`@peekling/pack-tumble`](https://www.npmjs.com/package/@peekling/pack-tumble/v/0.1.1) |
+| ![Vali](packages/pack-vali/thumbnail.png) | [Vali](packages/pack-vali) | A brave little slime whose bouncy courage fills the room. | `0.1.1` | [`@peekling/pack-vali`](https://www.npmjs.com/package/@peekling/pack-vali/v/0.1.1) |
+| ![Waddle](packages/pack-waddle/thumbnail.png) | [Waddle](packages/pack-waddle) | A scarf-wrapped penguin with a gentle side-to-side waddle. | `0.1.1` | [`@peekling/pack-waddle`](https://www.npmjs.com/package/@peekling/pack-waddle/v/0.1.1) |
+| ![X3](packages/pack-x3/thumbnail.png) | [X3](packages/pack-x3) | A gentle retro terminal whose cyan X and 3 screen-eyes turn activity into expressive companionship. | `0.1.0` (unreleased) | `@peekling/pack-x3` (unreleased) |
+| ![Zesty](packages/pack-zesty/thumbnail.png) | [Zesty](packages/pack-zesty) | A lively pizza slice who scoots with a confident tilt. | `0.1.1` | [`@peekling/pack-zesty`](https://www.npmjs.com/package/@peekling/pack-zesty/v/0.1.1) |
 <!-- PACK_ROSTER_END -->
 
 Run `npm run roster` after changing package metadata or after a release. `npm run roster:check` verifies npm publication state and keeps every unreleased package clearly labeled.
@@ -125,7 +126,7 @@ This repository is the curated home for official Peekling packs, not a global co
 
 ## Licensing and attribution
 
-Repository tooling, tests, and documentation are licensed under [Apache-2.0](LICENSE). All 28 current official character packs also declare Apache-2.0 and carry their own `LICENSE` and `NOTICE` files.
+Repository tooling, tests, and documentation are licensed under [Apache-2.0](LICENSE). All 29 current official character packs also declare Apache-2.0 and carry their own `LICENSE` and `NOTICE` files.
 
 Redistribution must follow the applicable license and notice terms for each pack. The Peekling name, logo, official mascot, and other distinctive brand identity are not granted by the tooling license unless a specific asset license says otherwise. See [licensing and attribution](LICENSING.md), [NOTICE](NOTICE), and [AUTHORS](AUTHORS) for the complete records.
 

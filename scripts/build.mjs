@@ -4,6 +4,9 @@ import { readdir } from "node:fs/promises";
 execFileSync(process.execPath, ["scripts/build-character-roster.mjs"], {
   stdio: "inherit",
 });
+execFileSync("npm", ["run", "build", "-w", "@peekling/pack-x3"], {
+  stdio: "inherit",
+});
 execFileSync(process.execPath, ["scripts/sync-pack-release-metadata.mjs"], {
   stdio: "inherit",
 });

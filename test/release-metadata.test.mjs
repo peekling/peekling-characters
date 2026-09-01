@@ -22,7 +22,7 @@ test("the private workspace preserves public authorship metadata", async () => {
 });
 
 test("all official packs expose the independent release boundary", async () => {
-  assert.equal(packageDirectories.length, 28);
+  assert.equal(packageDirectories.length, 29);
   for (const directory of packageDirectories) {
     const root = path.join("packages", directory);
     const manifest = JSON.parse(

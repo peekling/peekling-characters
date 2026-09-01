@@ -16,7 +16,7 @@ for (const entry of await readdir("packages", { withFileTypes: true })) {
     const measured = {
       density: variant.density,
       downloadBytes: atlas.size,
-      decodeBytes: 16 * cell * rows * cell * 4,
+      decodeBytes: manifest.assets.atlases.columns * cell * rows * cell * 4,
     };
     if (measured.downloadBytes > 4 * 1024 * 1024)
       throw new Error(`${entry.name} ${variant.density}x exceeds 4 MiB`);
