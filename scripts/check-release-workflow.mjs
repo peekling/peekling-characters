@@ -34,9 +34,9 @@ const packageDirectories = (await readdir("packages", { withFileTypes: true }))
   .filter((entry) => entry.isDirectory())
   .map((entry) => entry.name)
   .sort();
-if (packageDirectories.length !== 28)
+if (packageDirectories.length !== 30)
   failures.push(
-    `expected 28 pack workspaces, found ${packageDirectories.length}`,
+    `expected 30 pack workspaces, found ${packageDirectories.length}`,
   );
 for (const directory of packageDirectories) {
   if (!directory.startsWith("pack-")) {
@@ -93,5 +93,5 @@ if (/NPM_TOKEN|NODE_AUTH_TOKEN|npm_[A-Za-z0-9]{20,}/.test(publish))
 
 if (failures.length) throw new Error(failures.join("\n"));
 console.log(
-  "Changesets and OIDC release preparation passed for 28 pack workspaces.",
+  "Changesets and OIDC release preparation passed for 30 pack workspaces.",
 );

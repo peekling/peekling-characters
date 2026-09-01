@@ -1,0 +1,588 @@
+{
+  "format": 1,
+  "name": "x3",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "metadata": {
+    "title": "X3",
+    "author": "Prajwal S. Venkateshmurthy",
+    "description": "A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship.",
+    "tags": ["x3", "screen-face", "retro-computer", "hd-adaptive", "states-100"]
+  },
+  "assets": {
+    "atlases": {
+      "columns": 16,
+      "rows": 7,
+      "logicalCellSize": 32,
+      "lineage": "x3-procedural-hd-v1",
+      "variants": [
+        {
+          "src": "atlas-1x.png",
+          "density": 1,
+          "sourceCellSize": 32,
+          "sha256": "dc000c7d5aea90c13f1d04f2223554e6cb38bb0cd63acf9664d1382330d4ca58"
+        },
+        {
+          "src": "atlas-2x.png",
+          "density": 2,
+          "sourceCellSize": 64,
+          "sha256": "667b64a5d221f55a6c79f6ad5e4d5f016e26d5d70ffffbfca595f9c021a39650"
+        },
+        {
+          "src": "atlas-4x.png",
+          "density": 4,
+          "sourceCellSize": 128,
+          "sha256": "e79ea218192abf165607a196fba81849243d89c35b1979d58b01e52933c3e9d2"
+        }
+      ]
+    }
+  },
+  "states": {
+    "idle": {
+      "frames": [0, 1, 0, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "blink": {
+      "frames": [1, 2, 1, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "slow-blink": {
+      "frames": [2, 3, 2, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "boot": {
+      "frames": [3, 4, 3, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "standby": {
+      "frames": [4, 5, 4, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "sleep": {
+      "frames": [5, 6, 5, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "wake": {
+      "frames": [6, 7, 6, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "listen": {
+      "frames": [7, 8, 7, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "curious": {
+      "frames": [8, 9, 8, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "thinking": {
+      "frames": [9, 10, 9, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "daydream": {
+      "frames": [10, 11, 10, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "content": {
+      "frames": [11, 0, 11, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:N": {
+      "frames": [12, 13, 12, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:NE": {
+      "frames": [13, 14, 13, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:E": {
+      "frames": [14, 15, 14, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:SE": {
+      "frames": [15, 16, 15, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:S": {
+      "frames": [16, 17, 16, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:SW": {
+      "frames": [17, 18, 17, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:W": {
+      "frames": [18, 19, 18, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "look:NW": {
+      "frames": [19, 20, 19, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "glance-left": {
+      "frames": [20, 21, 20, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "glance-right": {
+      "frames": [21, 22, 21, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "peek-left": {
+      "frames": [22, 23, 22, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "peek-right": {
+      "frames": [23, 24, 23, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "scan-left": {
+      "frames": [24, 25, 24, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "scan-right": {
+      "frames": [25, 26, 25, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "near-focus": {
+      "frames": [26, 27, 26, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "far-focus": {
+      "frames": [27, 12, 27, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "happy": {
+      "frames": [28, 29, 28],
+      "durations": [125, 260, 420],
+      "loop": false
+    },
+    "delighted": {
+      "frames": [29, 30, 29],
+      "durations": [145, 285, 450],
+      "loop": false
+    },
+    "excited": {
+      "frames": [30, 31, 30],
+      "durations": [165, 185, 300],
+      "loop": false
+    },
+    "proud": {
+      "frames": [31, 32, 31],
+      "durations": [185, 210, 330],
+      "loop": false
+    },
+    "hopeful": {
+      "frames": [32, 33, 32],
+      "durations": [125, 235, 360],
+      "loop": false
+    },
+    "surprised": {
+      "frames": [33, 34, 33],
+      "durations": [145, 260, 390],
+      "loop": false
+    },
+    "startled": {
+      "frames": [34, 35, 34],
+      "durations": [165, 285, 420],
+      "loop": false
+    },
+    "confused": {
+      "frames": [35, 36, 35],
+      "durations": [185, 185, 450],
+      "loop": false
+    },
+    "puzzled": {
+      "frames": [36, 37, 36],
+      "durations": [125, 210, 300],
+      "loop": false
+    },
+    "worried": {
+      "frames": [37, 38, 37],
+      "durations": [145, 235, 330],
+      "loop": false
+    },
+    "anxious": {
+      "frames": [38, 39, 38],
+      "durations": [165, 260, 360],
+      "loop": false
+    },
+    "sad": {
+      "frames": [39, 40, 39],
+      "durations": [185, 285, 390],
+      "loop": false
+    },
+    "disappointed": {
+      "frames": [40, 41, 40],
+      "durations": [125, 185, 420],
+      "loop": false
+    },
+    "lonely": {
+      "frames": [41, 42, 41],
+      "durations": [145, 210, 450],
+      "loop": false
+    },
+    "tired": {
+      "frames": [42, 43, 42],
+      "durations": [165, 235, 300],
+      "loop": false
+    },
+    "annoyed": {
+      "frames": [43, 44, 43],
+      "durations": [185, 260, 330],
+      "loop": false
+    },
+    "angry": {
+      "frames": [44, 45, 44],
+      "durations": [125, 285, 360],
+      "loop": false
+    },
+    "determined": {
+      "frames": [45, 46, 45],
+      "durations": [145, 185, 390],
+      "loop": false
+    },
+    "brave": {
+      "frames": [46, 47, 46],
+      "durations": [165, 210, 420],
+      "loop": false
+    },
+    "shy": {
+      "frames": [47, 48, 47],
+      "durations": [185, 235, 450],
+      "loop": false
+    },
+    "bashful": {
+      "frames": [48, 49, 48],
+      "durations": [125, 260, 300],
+      "loop": false
+    },
+    "mischievous": {
+      "frames": [49, 50, 49],
+      "durations": [145, 285, 330],
+      "loop": false
+    },
+    "playful": {
+      "frames": [50, 51, 50],
+      "durations": [165, 185, 360],
+      "loop": false
+    },
+    "relieved": {
+      "frames": [51, 28, 51],
+      "durations": [185, 210, 390],
+      "loop": false
+    },
+    "hover": {
+      "frames": [52, 53, 52, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "click": {
+      "frames": [53, 54, 53],
+      "durations": [145, 260, 450],
+      "loop": false
+    },
+    "double-click": {
+      "frames": [54, 55, 54],
+      "durations": [165, 285, 300],
+      "loop": false
+    },
+    "context-click": {
+      "frames": [55, 56, 55],
+      "durations": [185, 185, 330],
+      "loop": false
+    },
+    "press": {
+      "frames": [56, 57, 56, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "release": {
+      "frames": [57, 58, 57],
+      "durations": [145, 235, 390],
+      "loop": false
+    },
+    "drag": {
+      "frames": [58, 59, 58, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "drag-hover": {
+      "frames": [59, 60, 59, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "drop": {
+      "frames": [60, 61, 60],
+      "durations": [125, 185, 300],
+      "loop": false
+    },
+    "scroll:fly": {
+      "frames": [61, 62, 61, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "scroll:fall": {
+      "frames": [62, 63, 62, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "land": {
+      "frames": [63, 64, 63],
+      "durations": [185, 260, 390],
+      "loop": false
+    },
+    "greet": {
+      "frames": [64, 65, 64],
+      "durations": [125, 285, 420],
+      "loop": false
+    },
+    "goodbye": {
+      "frames": [65, 66, 65],
+      "durations": [145, 185, 450],
+      "loop": false
+    },
+    "cheer": {
+      "frames": [66, 67, 66],
+      "durations": [165, 210, 300],
+      "loop": false
+    },
+    "music:headphones": {
+      "frames": [67, 52, 67],
+      "durations": [185, 235, 330],
+      "loop": false
+    },
+    "loading": {
+      "frames": [68, 69, 68, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "waiting": {
+      "frames": [69, 70, 69, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "success": {
+      "frames": [70, 71, 70],
+      "durations": [165, 185, 420],
+      "loop": false
+    },
+    "error": {
+      "frames": [71, 72, 71],
+      "durations": [185, 210, 450],
+      "loop": false
+    },
+    "notification": {
+      "frames": [72, 73, 72],
+      "durations": [125, 235, 300],
+      "loop": false
+    },
+    "focus": {
+      "frames": [73, 74, 73],
+      "durations": [145, 260, 330],
+      "loop": false
+    },
+    "blur": {
+      "frames": [74, 75, 74],
+      "durations": [165, 285, 360],
+      "loop": false
+    },
+    "page-visible": {
+      "frames": [75, 76, 75, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "page-hidden": {
+      "frames": [76, 77, 76, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "page-freeze": {
+      "frames": [77, 78, 77, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "page-resume": {
+      "frames": [78, 79, 78],
+      "durations": [165, 260, 300],
+      "loop": false
+    },
+    "section-enter": {
+      "frames": [79, 80, 79],
+      "durations": [185, 285, 330],
+      "loop": false
+    },
+    "section-leave": {
+      "frames": [80, 81, 80],
+      "durations": [125, 185, 360],
+      "loop": false
+    },
+    "scroll": {
+      "frames": [81, 82, 81, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "scroll-down": {
+      "frames": [82, 83, 82, 1],
+      "fps": 5,
+      "loop": true
+    },
+    "resize": {
+      "frames": [83, 68, 83],
+      "durations": [185, 260, 450],
+      "loop": false
+    },
+    "move:N": {
+      "frames": [84, 12, 84, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:NE": {
+      "frames": [85, 13, 85, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:E": {
+      "frames": [86, 14, 86, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:SE": {
+      "frames": [87, 15, 87, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:S": {
+      "frames": [88, 16, 88, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:SW": {
+      "frames": [89, 17, 89, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:W": {
+      "frames": [90, 18, 90, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "move:NW": {
+      "frames": [91, 19, 91, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "bounce": {
+      "frames": [92, 93, 92, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "hop": {
+      "frames": [93, 94, 93, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "jump": {
+      "frames": [94, 95, 94, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "dash": {
+      "frames": [95, 96, 95, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "slide": {
+      "frames": [96, 97, 96, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "skid": {
+      "frames": [97, 98, 97, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "orbit": {
+      "frames": [98, 99, 98, 1],
+      "fps": 8,
+      "loop": true
+    },
+    "settle": {
+      "frames": [99, 84, 99, 1],
+      "fps": 8,
+      "loop": true
+    }
+  },
+  "capabilities": {
+    "locomotion": {
+      "directions": {
+        "N": "move:N",
+        "NE": "move:NE",
+        "E": "move:E",
+        "SE": "move:SE",
+        "S": "move:S",
+        "SW": "move:SW",
+        "W": "move:W",
+        "NW": "move:NW"
+      },
+      "motion": {
+        "keyframes": [
+          {
+            "at": 0,
+            "advance": 0,
+            "lift": 0
+          },
+          {
+            "at": 0.24,
+            "advance": 0.2,
+            "lift": 0.08
+          },
+          {
+            "at": 0.52,
+            "advance": 0.58,
+            "lift": 0.14
+          },
+          {
+            "at": 0.8,
+            "advance": 0.9,
+            "lift": 0.04
+          },
+          {
+            "at": 1,
+            "advance": 1,
+            "lift": 0
+          }
+        ]
+      }
+    }
+  },
+  "defaults": {
+    "scale": 2
+  }
+}

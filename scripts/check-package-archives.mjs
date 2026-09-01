@@ -21,8 +21,8 @@ const required = [
 const failures = [];
 const repositoryLicense = await readFile("LICENSE", "utf8");
 
-if (archives.length !== 28)
-  failures.push(`expected 28 package dry-runs, received ${archives.length}`);
+if (archives.length !== 30)
+  failures.push(`expected 30 package dry-runs, received ${archives.length}`);
 
 for (const archive of archives) {
   const files = new Set(archive.files.map((file) => file.path));

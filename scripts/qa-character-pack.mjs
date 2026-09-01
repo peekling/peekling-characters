@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { PNG } from "pngjs";
@@ -20,8 +20,8 @@ for (const variant of manifest.assets.atlases.variants) {
   const image = PNG.sync.read(bytes);
   images.set(variant.density, image);
   if (
-    image.width !== 16 * variant.sourceCellSize ||
-    image.height !== 3 * variant.sourceCellSize
+    image.width !== manifest.assets.atlases.columns * variant.sourceCellSize ||
+    image.height !== manifest.assets.atlases.rows * variant.sourceCellSize
   )
     failures.push(`${variant.density}x geometry is invalid`);
   if (createHash("sha256").update(bytes).digest("hex") !== variant.sha256)
@@ -38,10 +38,14 @@ const used = [
 const locomotionStates = new Set(
   Object.values(manifest.capabilities.locomotion.directions),
 );
-const metrics = used.map((frame) => metric(one, frame, 64));
+const logicalCellSize = manifest.assets.atlases.logicalCellSize;
+const columns = manifest.assets.atlases.columns;
+const metrics = used.map((frame) =>
+  metric(one, frame, logicalCellSize, columns),
+);
 for (const item of metrics) {
   if (!item.visible) failures.push(`frame ${item.frame} is empty`);
-  if (item.minX === 0 || item.minY === 0 || item.maxX === 63)
+  if (item.minX === 0 || item.minY === 0 || item.maxX === logicalCellSize - 1)
     failures.push(`frame ${item.frame} touches a non-ground edge`);
   if (item.occupancy < 0.08 || item.occupancy > 0.8)
     failures.push(`frame ${item.frame} occupancy is implausible`);
@@ -51,13 +55,13 @@ for (const [stateName, state] of Object.entries(manifest.states)) {
     failures.push(`${stateName} must use exactly one timing mode`);
   if (locomotionStates.has(stateName)) {
     const [a, b] = state.frames;
-    const delta = difference(one, a, b, 64);
+    const delta = difference(one, a, b, logicalCellSize, columns);
     if (delta < 1.5 || delta > 110)
       failures.push(
         `${stateName} pair difference ${delta.toFixed(2)} is implausible`,
       );
-    const ma = metric(one, a, 64);
-    const mb = metric(one, b, 64);
+    const ma = metric(one, a, logicalCellSize, columns);
+    const mb = metric(one, b, logicalCellSize, columns);
     if (Math.abs(ma.maxY - mb.maxY) > 6)
       failures.push(`${stateName} baseline moves more than 6 logical pixels`);
   }
@@ -68,16 +72,17 @@ if (uniqueColors(four) <= uniqueColors(one))
   );
 
 const artifact = path.join(repositoryRoot, "artifacts/art", name);
+await mkdir(artifact, { recursive: true });
 const loops = Object.entries(manifest.states)
   .filter(([, state]) => state.loop)
   .map(
     ([stateName, state]) =>
-      `<figure><div class="frames">${state.frames.map((frame) => `<i style="--x:${frame % 16};--y:${Math.floor(frame / 16)}"></i>`).join("")}</div><figcaption>${stateName}</figcaption></figure>`,
+      `<figure><div class="frames">${state.frames.map((frame) => `<i style="--x:${frame % columns};--y:${Math.floor(frame / columns)}"></i>`).join("")}</div><figcaption>${stateName}</figcaption></figure>`,
   )
   .join("");
 await writeFile(
   path.join(artifact, "loop-review.html"),
-  `<!doctype html><meta charset="utf-8"><title>${name} loop review</title><style>body{font:16px system-ui;background:#fafafa;color:#262626}.frames{display:flex;gap:8px}.frames i{width:128px;height:128px;background:url(../../../packages/pack-${name}/atlas-1x.png) calc(var(--x)*-128px) calc(var(--y)*-128px)/2048px 384px no-repeat}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}</style><h1>${name} deterministic loop review</h1><main>${loops}</main>`,
+  `<!doctype html><meta charset="utf-8"><title>${name} loop review</title><style>body{font:16px system-ui;background:#fafafa;color:#262626}.frames{display:flex;gap:8px}.frames i{width:128px;height:128px;background:url(../../../packages/pack-${name}/atlas-1x.png) calc(var(--x)*-128px) calc(var(--y)*-128px)/${columns * 128}px ${manifest.assets.atlases.rows * 128}px no-repeat}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}</style><h1>${name} deterministic loop review</h1><main>${loops}</main>`,
 );
 if (failures.length)
   throw new Error(`${name} artwork QA failed:\n- ${failures.join("\n- ")}`);
@@ -85,14 +90,14 @@ console.log(
   `${name} artwork QA passed: ${used.length} dense frames, adaptive 1x/2x/4x.`,
 );
 
-function metric(image, frame, cell) {
+function metric(image, frame, cell, columns) {
   let minX = cell,
     minY = cell,
     maxX = -1,
     maxY = -1,
     visible = 0;
-  const originX = (frame % 16) * cell;
-  const originY = Math.floor(frame / 16) * cell;
+  const originX = (frame % columns) * cell;
+  const originY = Math.floor(frame / columns) * cell;
   for (let y = 0; y < cell; y++)
     for (let x = 0; x < cell; x++) {
       const alpha =
@@ -115,20 +120,20 @@ function metric(image, frame, cell) {
   };
 }
 
-function difference(image, a, b, cell) {
+function difference(image, a, b, cell, columns) {
   let total = 0;
   for (let y = 0; y < cell; y++)
     for (let x = 0; x < cell; x++)
       for (let channel = 0; channel < 4; channel++) {
         const ai =
-          ((Math.floor(a / 16) * cell + y) * image.width +
-            (a % 16) * cell +
+          ((Math.floor(a / columns) * cell + y) * image.width +
+            (a % columns) * cell +
             x) *
             4 +
           channel;
         const bi =
-          ((Math.floor(b / 16) * cell + y) * image.width +
-            (b % 16) * cell +
+          ((Math.floor(b / columns) * cell + y) * image.width +
+            (b % columns) * cell +
             x) *
             4 +
           channel;

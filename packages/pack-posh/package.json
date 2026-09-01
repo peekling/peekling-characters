@@ -1,0 +1,35 @@
+{
+  "name": "@peekling/pack-posh",
+  "version": "0.1.0",
+  "description": "Pearl-white orb Peekling character pack with 100 expressive eye-driven states",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Prajwal S. Venkateshmurthy",
+    "url": "https://prajwal.me"
+  },
+  "files": [
+    "character.json",
+    "atlas-1x.png",
+    "atlas-2x.png",
+    "atlas-4x.png",
+    "thumbnail.png",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node source/build.mjs && node --test test/*.test.mjs && node ../../scripts/qa-character-pack.mjs posh",
+    "test": "node --test test/*.test.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peekling/peekling-characters.git",
+    "directory": "packages/pack-posh"
+  },
+  "bugs": {
+    "url": "https://github.com/peekling/peekling-characters/issues"
+  }
+}
