@@ -52,18 +52,26 @@ async function main() {
   }
 
   const changedChangesets = changes
-    .filter(([change]) => change !== "D")
-    .flatMap((parts) => parts.slice(1))
+    .flatMap(([change, ...files]) => {
+      const relevantFiles = change.startsWith("R") ? files.slice(-1) : files;
+      return relevantFiles.map((file) => ({ change, file }));
+    })
     .filter(
-      (file) =>
+      ({ file }) =>
         /^\.changeset\/[^/]+\.md$/.test(file) &&
         file !== ".changeset/README.md",
     );
   const releases = new Map();
-  for (const file of changedChangesets) {
+  for (const { change, file } of changedChangesets) {
     let parsed;
     try {
-      parsed = parseChangeset(await readFile(file, "utf8"));
+      const text =
+        change === "D"
+          ? execFileSync("git", ["show", `${base}:${file}`], {
+              encoding: "utf8",
+            })
+          : await readFile(file, "utf8");
+      parsed = parseChangeset(text);
     } catch (error) {
       throw new Error(`${file}: ${error.message}`);
     }

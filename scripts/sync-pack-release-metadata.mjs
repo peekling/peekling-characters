@@ -61,6 +61,7 @@ for (const directory of packageDirectories) {
     "NOTICE",
     "README.md",
   ];
+  manifest.version = packageManifest.version;
   manifest.license = "Apache-2.0";
   manifest.metadata.author = author;
 
