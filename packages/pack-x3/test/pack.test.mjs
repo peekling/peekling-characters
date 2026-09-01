@@ -38,7 +38,7 @@ test("X3 exposes 100 states across six intentional families", () => {
   const names = Object.values(STATE_GROUPS).flat();
   assert.equal(names.length, FRAME_COUNT);
   assert.equal(new Set(names).size, FRAME_COUNT);
-  assert.equal(COLUMNS * ROWS, FRAME_COUNT);
+  assert.equal(COLUMNS * ROWS - FRAME_COUNT, 12);
 });
 
 test("every state keeps two LED screen eyes while giving them a unique performance", () => {
@@ -161,13 +161,35 @@ test("all 100 frames are visible, cyan-faced, transparent, and pixel-distinct at
       countVisiblePixels(frame) > LOGICAL_CELL_SIZE * LOGICAL_CELL_SIZE * 0.2,
       expression.name,
     );
-    assert.ok(countCyanPixels(frame) >= 3, expression.name);
+    assert.ok(
+      countCyanPixels(frame) >=
+        (LOGICAL_CELL_SIZE * LOGICAL_CELL_SIZE * 3) / (48 * 48),
+      expression.name,
+    );
     assert.equal(frame.data[3], 0, `${expression.name} top-left corner`);
   }
   assert.equal(signatures.size, FRAME_COUNT);
 });
 
-test("each true density has exact 10 by 10 geometry", () => {
+test("each true density has exact native 16 by 7 geometry", () => {
+  const manifest = createManifest({
+    1: "0".repeat(64),
+    2: "0".repeat(64),
+    4: "0".repeat(64),
+  });
+  assert.equal(manifest.assets.atlases.columns, 16);
+  assert.equal(manifest.assets.atlases.rows, 7);
+  assert.equal(manifest.assets.atlases.logicalCellSize, 32);
+  assert.equal(manifest.defaults.scale, 2);
+  assert.deepEqual(
+    manifest.assets.atlases.variants.map(
+      ({ sourceCellSize }) => sourceCellSize,
+    ),
+    [32, 64, 128],
+  );
+  assert.ok(
+    manifest.metadata.tags.every((tag) => /^[a-z][a-z0-9._-]*$/.test(tag)),
+  );
   for (const density of [1, 2, 4]) {
     const atlas = renderAtlas(createExpressions(), density);
     const cell = LOGICAL_CELL_SIZE * density;

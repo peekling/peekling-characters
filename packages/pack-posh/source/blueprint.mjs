@@ -2,9 +2,9 @@ export const CHARACTER_ID = "posh";
 export const CHARACTER_TITLE = "Posh";
 export const VERSION = "0.1.0";
 export const LICENSE_ID = "Apache-2.0";
-export const COLUMNS = 10;
-export const ROWS = 10;
-export const LOGICAL_CELL_SIZE = 48;
+export const COLUMNS = 16;
+export const ROWS = 7;
+export const LOGICAL_CELL_SIZE = 32;
 export const FRAME_COUNT = 100;
 
 export const STATE_GROUPS = Object.freeze({
@@ -356,7 +356,7 @@ const RECIPES = {
     { gazeY: -2.1, width: 10.2, height: 20.2, highlight: "star" },
     { tilt: -5 },
     { tilt: 5 },
-    { lift: 2.5, squash: -0.08, glow: 0.24 },
+    { lift: 2, squash: -0.08, glow: 0.24 },
   ),
   proud: pose(
     {
@@ -386,7 +386,7 @@ const RECIPES = {
     { gazeY: -1.6, width: 9.4, height: 21.6, highlight: "pin" },
     { x: -1.2, tilt: -10 },
     { x: 1.2, tilt: 10 },
-    { lift: 2.8, squash: -0.1, tilt: -3 },
+    { lift: 2.3, squash: -0.1, tilt: -3 },
   ),
   confused: pose(
     { gazeX: 0.8, gazeY: -0.7, highlight: "single" },
@@ -534,7 +534,7 @@ const RECIPES = {
     { gazeY: 1.4, width: 10.3, height: 5.2, highlight: "star" },
     { tilt: -13 },
     { tilt: 13 },
-    { squash: 0.17, lift: -1.2, glow: 0.12 },
+    { squash: 0.15, lift: -1.2, glow: 0.12 },
   ),
   "context-click": pose(
     {
@@ -559,7 +559,7 @@ const RECIPES = {
     { gazeY: -3.3, width: 8.9, height: 18.7, highlight: "double" },
     { tilt: -4 },
     { tilt: 4 },
-    { squash: -0.11, lift: 2.4 },
+    { squash: -0.11, lift: 2 },
   ),
   drag: pose(
     { gazeX: 4.6, width: 7.6, height: 12.5, lidTop: 0.16, highlight: "bar" },
@@ -601,7 +601,7 @@ const RECIPES = {
     },
     { tilt: -10 },
     { tilt: 10 },
-    { squash: 0.2, lift: -2.2 },
+    { squash: 0.18, lift: -2.2 },
   ),
   greet: pose(
     { gazeX: -3, gazeY: -1.5, width: 8.6, height: 15.5, highlight: "star" },
@@ -658,7 +658,7 @@ const RECIPES = {
     { gazeY: -1.7, width: 10.4, height: 18.8, highlight: "star" },
     { tilt: -7 },
     { tilt: 7 },
-    { lift: 2.3, squash: -0.08, glow: 0.3 },
+    { lift: 2, squash: -0.08, glow: 0.3 },
   ),
   error: pose(
     { gazeY: 1.4, width: 9.5, height: 10.4, lidTop: 0.36, highlight: "bar" },
@@ -928,7 +928,7 @@ export function createManifest(hashes) {
       author: "Prajwal S. Venkateshmurthy",
       description:
         "A pearl-white orb whose expressive eyes turn every movement and feeling into a readable performance.",
-      tags: ["posh", "orb", "eye-driven", "hd-adaptive", "100-states"],
+      tags: ["posh", "orb", "eye-driven", "hd-adaptive", "states-100"],
     },
     assets: {
       atlases: {
@@ -968,6 +968,6 @@ export function createManifest(hashes) {
         },
       },
     },
-    defaults: { scale: 4 / 3 },
+    defaults: { scale: 2 },
   };
 }

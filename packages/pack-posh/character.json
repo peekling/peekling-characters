@@ -7,32 +7,32 @@
     "title": "Posh",
     "author": "Prajwal S. Venkateshmurthy",
     "description": "A pearl-white orb whose expressive eyes turn every movement and feeling into a readable performance.",
-    "tags": ["posh", "orb", "eye-driven", "hd-adaptive", "100-states"]
+    "tags": ["posh", "orb", "eye-driven", "hd-adaptive", "states-100"]
   },
   "assets": {
     "atlases": {
-      "columns": 10,
-      "rows": 10,
-      "logicalCellSize": 48,
+      "columns": 16,
+      "rows": 7,
+      "logicalCellSize": 32,
       "lineage": "posh-procedural-hd-v1",
       "variants": [
         {
           "src": "atlas-1x.png",
           "density": 1,
-          "sourceCellSize": 48,
-          "sha256": "0e32d3754d22895d84a00c48defe79a81b759cfba67d7fa581b6e6648c3752ea"
+          "sourceCellSize": 32,
+          "sha256": "5f655a41597f154f0d20faccce20f4cf5ceded5043b126a500d1e1bd87faa456"
         },
         {
           "src": "atlas-2x.png",
           "density": 2,
-          "sourceCellSize": 96,
-          "sha256": "0c6f3377ade142fb4814ee2f866361f6bf9e3772495aa036e3bc1ac360c4b148"
+          "sourceCellSize": 64,
+          "sha256": "5bda1e184509c94d1fa9096af150536765d3a9b7d9dd56ea9e18b1d37306e9e7"
         },
         {
           "src": "atlas-4x.png",
           "density": 4,
-          "sourceCellSize": 192,
-          "sha256": "63ac52598256b7d21a631e4acab4d42e1478c991375b9947f0ceeb09c2e99983"
+          "sourceCellSize": 128,
+          "sha256": "8f20d66b08e9a0f955fb7ca8e07c7eb870355d5ea6a77a5fdceb3f13a790f6e8"
         }
       ]
     }
@@ -583,6 +583,6 @@
     }
   },
   "defaults": {
-    "scale": 1.3333333333333333
+    "scale": 2
   }
 }

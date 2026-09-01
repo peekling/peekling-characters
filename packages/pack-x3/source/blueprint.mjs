@@ -2,9 +2,9 @@ export const CHARACTER_ID = "x3";
 export const CHARACTER_TITLE = "X3";
 export const VERSION = "0.1.0";
 export const LICENSE_ID = "Apache-2.0";
-export const COLUMNS = 10;
-export const ROWS = 10;
-export const LOGICAL_CELL_SIZE = 48;
+export const COLUMNS = 16;
+export const ROWS = 7;
+export const LOGICAL_CELL_SIZE = 32;
 export const FRAME_COUNT = 100;
 
 export const STATE_GROUPS = Object.freeze({
@@ -214,7 +214,7 @@ const RECIPES = {
       scaleX: 0.78,
       scaleY: 0.74,
       brightness: 0.72,
-      scanGap: 0.42,
+      scanGap: 0,
       glitch: 2,
       spark: "cursor",
     },
@@ -1025,7 +1025,7 @@ const RECIPES = {
     },
     { tilt: -9 },
     { tilt: 8 },
-    { lift: 2.4, squash: -0.14, tilt: 5 },
+    { lift: 2, squash: -0.14, tilt: 5 },
   ),
   jump: pose(
     { gazeY: -5.3, scaleX: 1.22, scaleY: 1.24, stroke: 1.34, spark: "ring" },
@@ -1213,7 +1213,7 @@ export function createManifest(hashes) {
         "screen-face",
         "retro-computer",
         "hd-adaptive",
-        "100-states",
+        "states-100",
       ],
     },
     assets: {
@@ -1254,6 +1254,6 @@ export function createManifest(hashes) {
         },
       },
     },
-    defaults: { scale: 4 / 3 },
+    defaults: { scale: 2 },
   };
 }

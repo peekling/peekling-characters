@@ -7,32 +7,32 @@
     "title": "X3",
     "author": "Prajwal S. Venkateshmurthy",
     "description": "A gentle retro terminal whose cyan LED eyes turn activity into expressive companionship.",
-    "tags": ["x3", "screen-face", "retro-computer", "hd-adaptive", "100-states"]
+    "tags": ["x3", "screen-face", "retro-computer", "hd-adaptive", "states-100"]
   },
   "assets": {
     "atlases": {
-      "columns": 10,
-      "rows": 10,
-      "logicalCellSize": 48,
+      "columns": 16,
+      "rows": 7,
+      "logicalCellSize": 32,
       "lineage": "x3-procedural-hd-v1",
       "variants": [
         {
           "src": "atlas-1x.png",
           "density": 1,
-          "sourceCellSize": 48,
-          "sha256": "df7f221d1f0a1a2b29cecde400b3c965d48f2526f04b6f172999d6d3c94069ef"
+          "sourceCellSize": 32,
+          "sha256": "dc000c7d5aea90c13f1d04f2223554e6cb38bb0cd63acf9664d1382330d4ca58"
         },
         {
           "src": "atlas-2x.png",
           "density": 2,
-          "sourceCellSize": 96,
-          "sha256": "869c7617cd8375fe924e3d2c5eb7ab4e5be2e9eca042c18a15f54a7283f64c5f"
+          "sourceCellSize": 64,
+          "sha256": "667b64a5d221f55a6c79f6ad5e4d5f016e26d5d70ffffbfca595f9c021a39650"
         },
         {
           "src": "atlas-4x.png",
           "density": 4,
-          "sourceCellSize": 192,
-          "sha256": "8cc4a22f621dbb3081f7f2bac241d69d550d4aa8a5389d153da9abc866060c9c"
+          "sourceCellSize": 128,
+          "sha256": "e79ea218192abf165607a196fba81849243d89c35b1979d58b01e52933c3e9d2"
         }
       ]
     }
@@ -583,6 +583,6 @@
     }
   },
   "defaults": {
-    "scale": 1.3333333333333333
+    "scale": 2
   }
 }

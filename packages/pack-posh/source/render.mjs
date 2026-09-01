@@ -10,7 +10,7 @@ const TAU = Math.PI * 2;
 const SUPERSAMPLE = 3;
 
 export function renderFrame(expression, density = 1) {
-  if (![1, 4 / 3, 2, 4].includes(density)) {
+  if (![1, 2, 4].includes(density)) {
     throw new Error(`Unsupported density ${density}`);
   }
   const size = LOGICAL_CELL_SIZE * density;

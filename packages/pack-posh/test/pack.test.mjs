@@ -44,7 +44,7 @@ test("the catalog contains exactly 100 named states in six intentional groups", 
       /^[a-z0-9-]+(?::(?:[a-z0-9-]+|N|NE|E|SE|S|SW|W|NW))?$/.test(name),
     ),
   );
-  assert.equal(COLUMNS * ROWS, FRAME_COUNT);
+  assert.equal(COLUMNS * ROWS - FRAME_COUNT, 12);
 });
 
 test("every state owns a genuinely distinct eye performance", () => {
@@ -158,14 +158,35 @@ test("all 100 logical frames render visibly and remain pixel-distinct at 1x", ()
       countVisiblePixels(frame) > LOGICAL_CELL_SIZE * LOGICAL_CELL_SIZE * 0.35,
       expression.name,
     );
-    assert.ok(countDarkEyePixels(frame) > 35, expression.name);
+    assert.ok(
+      countDarkEyePixels(frame) > LOGICAL_CELL_SIZE * LOGICAL_CELL_SIZE * 0.015,
+      expression.name,
+    );
     assert.equal(frame.data[3], 0, `${expression.name} top-left corner`);
   }
 
   assert.equal(signatures.size, FRAME_COUNT);
 });
 
-test("each true density has exact 10 by 10 geometry", () => {
+test("each true density has exact native 16 by 7 geometry", () => {
+  const manifest = createManifest({
+    1: "0".repeat(64),
+    2: "0".repeat(64),
+    4: "0".repeat(64),
+  });
+  assert.equal(manifest.assets.atlases.columns, 16);
+  assert.equal(manifest.assets.atlases.rows, 7);
+  assert.equal(manifest.assets.atlases.logicalCellSize, 32);
+  assert.equal(manifest.defaults.scale, 2);
+  assert.deepEqual(
+    manifest.assets.atlases.variants.map(
+      ({ sourceCellSize }) => sourceCellSize,
+    ),
+    [32, 64, 128],
+  );
+  assert.ok(
+    manifest.metadata.tags.every((tag) => /^[a-z][a-z0-9._-]*$/.test(tag)),
+  );
   for (const density of [1, 2, 4]) {
     const atlas = renderAtlas(createExpressions(), density);
     const cell = LOGICAL_CELL_SIZE * density;

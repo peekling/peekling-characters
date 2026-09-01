@@ -92,7 +92,7 @@ export async function buildPack() {
     [...atlases].map(([density, atlas]) => [density, atlas.sha256]),
   );
   const manifest = createManifest(hashes);
-  const thumbnail = renderFrame(expressions[0], 4 / 3);
+  const thumbnail = renderFrame(expressions[0], 2);
   const stateSheet = createStateSheet(atlases.get(1).atlas, expressions);
 
   try {
@@ -279,7 +279,7 @@ function packageManifest() {
 }
 
 function packReadme() {
-  return `# \`@peekling/pack-x3\`\n\nX3 is a data-only Peekling character pack. A compact retro terminal acts as the body, while two cyan LED eyes express one hundred named states without displaying text.\n\nThe pack contains independent 48, 96, and 192px atlas densities with a default scale equivalent to 64 logical pixels. Every state begins on its own signature frame and every animation moves between at least two distinct display performances.\n`;
+  return `# \`@peekling/pack-x3\`\n\nX3 is a data-only Peekling character pack. A compact retro terminal acts as the body, while two cyan LED eyes express one hundred named states without displaying text.\n\nThe pack contains independent 32, 64, and 128px atlas densities at native scale 2. Every state begins on its own signature frame and every animation moves between at least two distinct display performances.\n`;
 }
 
 function licenseText() {
